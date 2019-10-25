@@ -3,28 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/posts/20191024-first-post/</loc>
+    <loc>https://facundomedica.github.io/knowledgebase/posts/20191024-first-post/</loc>
     <lastmod>2019-10-24T23:18:02-03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://facundomedica.github.io/knowledgebase/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/posts/</loc>
+    <loc>https://facundomedica.github.io/knowledgebase/posts/</loc>
     <lastmod>2019-10-24T23:18:02-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://facundomedica.github.io/knowledgebase/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>https://facundomedica.github.io/knowledgebase/</loc>
     <lastmod>2019-10-24T23:18:02-03:00</lastmod>
     <priority>0</priority>
   </url>
