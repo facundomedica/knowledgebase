@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://facundomedica.github.io/knowledgebase/"
 languageCode = "en"
 title = "facundo.dev"
 theme = "beautifulhugo"
