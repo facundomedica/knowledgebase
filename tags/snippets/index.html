@@ -7,9 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>First Post - facundo.dev</title>
-  <meta name="description" content="This is my second blog ever (maybe I&rsquo;ll write about my first one someday).
-This time in a &ldquo;knowledge base&rdquo; format, meaning that a full post could be just a snippet of code or a 100 paragraph story.">
+  <title>Overview of all pages with the tag #snippets - facundo.dev</title>
+  <meta name="description" content="Overview of all pages with the tag #snippets, such as: AES-GCM encryption in Go">
   <meta name="author" content="Facundo Medica"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -30,65 +29,13 @@ This time in a &ldquo;knowledge base&rdquo; format, meaning that a full post cou
   
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@id": "https:\/\/facundo.dev",
-          "name": "home"
-        }
-    },{
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@id": "https:\/\/facundo.dev\/posts\/20191024-first-post\/",
-          "name": "First post"
-        }
-    }]
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Article",
-  "author": {
-    "name" : "Facundo Medica"
-  },
-  "headline": "First Post",
-  "description" : "This is my second blog ever (maybe I\x26rsquo;ll write about my first one someday).\nThis time in a \x26ldquo;knowledge base\x26rdquo; format, meaning that a full post could be just a snippet of code or a 100 paragraph story.",
-  "inLanguage" : "en",
-  "wordCount":  38 ,
-  "datePublished" : "2019-10-24T23:18:02",
-  "dateModified" : "2019-10-24T23:18:02",
-  "image" : "https:\/\/facundo.dev",
-  "keywords" : [ "" ],
-  "mainEntityOfPage" : "https:\/\/facundo.dev\/posts\/20191024-first-post\/",
-  "publisher" : {
-    "@type": "Organization",
-    "name" : "https:\/\/facundo.dev",
-    "logo" : {
-        "@type" : "ImageObject",
-        "url" : "https:\/\/facundo.dev",
-        "height" :  60 ,
-        "width" :  60
-    }
-  }
-}
-</script>
 
-<meta property="og:title" content="First Post" />
-<meta property="og:description" content="This is my second blog ever (maybe I&rsquo;ll write about my first one someday).
-This time in a &ldquo;knowledge base&rdquo; format, meaning that a full post could be just a snippet of code or a 100 paragraph story.">
-<meta property="og:url" content="https://facundo.dev/posts/20191024-first-post/" />
+<meta property="og:title" content="snippets" />
+<meta property="og:url" content="https://facundo.dev/tags/snippets/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="facundo.dev" />
 
-  <meta name="twitter:title" content="First Post" />
-  <meta name="twitter:description" content="This is my second blog ever (maybe I&rsquo;ll write about my first one someday).
-This time in a &ldquo;knowledge base&rdquo; format, meaning that a full post could be just a snippet of code or a 100 …">
+  <meta name="twitter:title" content="snippets" />
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.59.0" />
   <link rel="alternate" href="https://facundo.dev/index.xml" type="application/rss+xml" title="facundo.dev"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -196,17 +143,43 @@ This time in a &ldquo;knowledge base&rdquo; format, meaning that a full post cou
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-heading">
+            <div class="tags-heading">
               
-                <h1>First Post</h1>
-              
-              
+                <h1>snippets</h1>
               
               
-                <span class="post-meta">
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="https://facundo.dev/posts/20191027-aesgcm-encryption/">
+        <h2 class="post-title">AES-GCM encryption in Go</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on October 24, 2019
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 27, 2019
   
   
   
@@ -219,49 +192,81 @@ This time in a &ldquo;knowledge base&rdquo; format, meaning that a full post cou
 </span>
 
 
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+    </p>
+    <div class="post-entry">
+        
+        <p>Somehow I ended up using AES-GCM at least once per week, so I&rsquo;m tired of googling the same thing over and over. Here&rsquo;s a working example extracted from the book <a href="https://astaxie.gitbooks.io/build-web-application-with-golang/en/09.6.html">Build a web application with Golang</a>.</p>
 
+<p>Note: the key should be 32 bytes result of a safe hash function like SHA256.</p>
+
+<p><a href="https://play.golang.org/p/BmJe5AypJvH">Go Playground</a></p>
+        <a href="https://facundo.dev/posts/20191027-aesgcm-encryption/" class="post-read-more">[Read More]</a>
+        
+    </div>
 
     
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
-        <p>This is my second blog ever (maybe I&rsquo;ll write about my first one someday).</p>
-
-<p>This time in a &ldquo;knowledge base&rdquo; format, meaning that a full post could be just a snippet of code or a 100 paragraph story.</p>
-
-
+    <div class="blog-tags">
         
-
+        <a href="https://facundo.dev/tags/snippets/">snippets</a>&nbsp;
         
-
+        <a href="https://facundo.dev/tags/go/">go</a>&nbsp;
         
-      </article>
+        <a href="https://facundo.dev/tags/crypto/">crypto</a>&nbsp;
+        
+    </div>
+    
 
-      
-        <ul class="pager blog-pager">
+</article>
           
+            <article class="post-preview">
+    <a href="https://facundo.dev/posts/20191027-simple-http-server/">
+        <h2 class="post-title">Simple HTTP Server</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 27, 2019
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Facundo Medica
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Serve an entire directory easily with Python.
+python -m SimpleHTTPServerpython3 -m http.
+        <a href="https://facundo.dev/posts/20191027-simple-http-server/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://facundo.dev/tags/snippets/">snippets</a>&nbsp;
+        
+    </div>
+    
+
+</article>
           
-            <li class="next">
-              <a href="https://facundo.dev/posts/20191027-simple-http-server/" data-toggle="tooltip" data-placement="top" title="Simple HTTP Server">Next Post &rarr;</a>
-            </li>
-          
-        </ul>
-      
-
-
-      
-
+        </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
       
 <footer>

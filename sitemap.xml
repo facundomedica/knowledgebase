@@ -1,6 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://facundo.dev/posts/20191027-aesgcm-encryption/</loc>
+    <lastmod>2019-10-27T16:33:21-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://facundo.dev/tags/crypto/</loc>
+    <lastmod>2019-10-27T16:33:21-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://facundo.dev/</loc>
+    <lastmod>2019-10-27T16:33:21-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://facundo.dev/tags/go/</loc>
+    <lastmod>2019-10-27T16:33:21-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://facundo.dev/posts/</loc>
+    <lastmod>2019-10-27T16:33:21-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://facundo.dev/tags/snippets/</loc>
+    <lastmod>2019-10-27T16:33:21-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://facundo.dev/tags/</loc>
+    <lastmod>2019-10-27T16:33:21-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://facundo.dev/posts/20191027-simple-http-server/</loc>
+    <lastmod>2019-10-27T15:55:39-03:00</lastmod>
+  </url>
   
   <url>
     <loc>https://facundo.dev/posts/20191024-first-post/</loc>
@@ -9,24 +49,6 @@
   
   <url>
     <loc>https://facundo.dev/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://facundo.dev/posts/</loc>
-    <lastmod>2019-10-24T23:18:02-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://facundo.dev/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://facundo.dev/</loc>
-    <lastmod>2019-10-24T23:18:02-03:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

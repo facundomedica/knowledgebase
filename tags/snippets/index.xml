@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on facundo.dev</title>
-    <link>https://facundo.dev/posts/</link>
-    <description>Recent content in Posts on facundo.dev</description>
+    <title>snippets on facundo.dev</title>
+    <link>https://facundo.dev/tags/snippets/</link>
+    <description>Recent content in snippets on facundo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>facundo@protonmail.com (Facundo Medica)</managingEditor>
     <webMaster>facundo@protonmail.com (Facundo Medica)</webMaster>
     <lastBuildDate>Sun, 27 Oct 2019 16:33:21 -0300</lastBuildDate>
     
-	<atom:link href="https://facundo.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://facundo.dev/tags/snippets/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -34,16 +34,6 @@
       <guid>https://facundo.dev/posts/20191027-simple-http-server/</guid>
       <description>Serve an entire directory easily with Python.
 python -m SimpleHTTPServerpython3 -m http.</description>
-    </item>
-    
-    <item>
-      <title>First Post</title>
-      <link>https://facundo.dev/posts/20191024-first-post/</link>
-      <pubDate>Thu, 24 Oct 2019 23:18:02 -0300</pubDate>
-      <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>https://facundo.dev/posts/20191024-first-post/</guid>
-      <description>This is my second blog ever (maybe I&amp;rsquo;ll write about my first one someday).
-This time in a &amp;ldquo;knowledge base&amp;rdquo; format, meaning that a full post could be just a snippet of code or a 100 paragraph story.</description>
     </item>
     
   </channel>
