@@ -2,3 +2,21 @@ baseURL = "https://facundo.dev"
 languageCode = "en"
 title = "facundo.dev"
 theme = "beautifulhugo"
+pygmentsStyle = "trac"
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+pygmentsUseClassic = true
+pygmentOptions = "linenos=inline"
+
+[Params]
+  mainSections = ["post","posts"]
+#  useHLJS = true
+
+[Author]
+  name = "Facundo Medica"
+  website = "https://facundo.dev"
+  email = "facundo@protonmail.com"
+  github = "facundomedica"
+  linkedin = "facundo-medica"
+  stackoverflow = "users/5240559/facumedica"

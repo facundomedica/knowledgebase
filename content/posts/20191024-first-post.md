@@ -1,6 +1,12 @@
 ---
 title: "First Post"
+author: "Facundo Medica"
+type: "post"
 date: 2019-10-24T23:18:02-03:00
+draft: false
+subtitle: ""
+image: ""
+tags: []
 draft: false
 ---
 
