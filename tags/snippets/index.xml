@@ -8,10 +8,21 @@
     <language>en</language>
     <managingEditor>facundo@protonmail.com (Facundo Medica)</managingEditor>
     <webMaster>facundo@protonmail.com (Facundo Medica)</webMaster>
-    <lastBuildDate>Sun, 27 Oct 2019 16:33:21 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 01 Nov 2019 19:55:15 -0300</lastBuildDate>
     
 	<atom:link href="https://facundo.dev/tags/snippets/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Split slice in chunks</title>
+      <link>https://facundo.dev/posts/20191101-split-slice-in-chunks/</link>
+      <pubDate>Fri, 01 Nov 2019 19:55:15 -0300</pubDate>
+      <author>facundo@protonmail.com (Facundo Medica)</author>
+      <guid>https://facundo.dev/posts/20191101-split-slice-in-chunks/</guid>
+      <description>&lt;p&gt;After benchmarking other solutions, this came out to be the most efficient.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/eNMOIlUFIRI&#34;&gt;Go Playground&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>AES-GCM encryption in Go</title>
