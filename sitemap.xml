@@ -3,8 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://facundo.dev/tags/docker/</loc>
+    <lastmod>2019-11-27T16:42:42-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://facundo.dev/</loc>
-    <lastmod>2019-11-01T19:55:15-03:00</lastmod>
+    <lastmod>2019-11-27T16:42:42-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://facundo.dev/posts/</loc>
+    <lastmod>2019-11-27T16:42:42-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://facundo.dev/posts/20191127-remove-all-docker-images/</loc>
+    <lastmod>2019-11-27T16:42:42-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://facundo.dev/tags/snippets/</loc>
+    <lastmod>2019-11-27T16:42:42-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://facundo.dev/tags/</loc>
+    <lastmod>2019-11-27T16:42:42-03:00</lastmod>
   </url>
   
   <url>
@@ -13,22 +38,7 @@
   </url>
   
   <url>
-    <loc>https://facundo.dev/posts/</loc>
-    <lastmod>2019-11-01T19:55:15-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://facundo.dev/tags/snippets/</loc>
-    <lastmod>2019-11-01T19:55:15-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://facundo.dev/posts/20191101-split-slice-in-chunks/</loc>
-    <lastmod>2019-11-01T19:55:15-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://facundo.dev/tags/</loc>
     <lastmod>2019-11-01T19:55:15-03:00</lastmod>
   </url>
   

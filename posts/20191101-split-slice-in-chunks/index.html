@@ -9,7 +9,6 @@
 
   <title>Split slice in chunks - facundo.dev</title>
   <meta name="description" content="After benchmarking other solutions, this came out to be the most efficient.
-
 Go Playground">
   <meta name="author" content="Facundo Medica"/><script type="application/ld+json">
 {
@@ -82,7 +81,6 @@ Go Playground">
 
 <meta property="og:title" content="Split slice in chunks" />
 <meta property="og:description" content="After benchmarking other solutions, this came out to be the most efficient.
-
 Go Playground">
 <meta property="og:url" content="https://facundo.dev/posts/20191101-split-slice-in-chunks/" />
 <meta property="og:type" content="website" />
@@ -90,10 +88,9 @@ Go Playground">
 
   <meta name="twitter:title" content="Split slice in chunks" />
   <meta name="twitter:description" content="After benchmarking other solutions, this came out to be the most efficient.
-
 Go Playground">
   <meta name="twitter:card" content="summary" />
-  <meta name="generator" content="Hugo 0.59.0" />
+  <meta name="generator" content="Hugo 0.60.0" />
   <link rel="alternate" href="https://facundo.dev/index.xml" type="application/rss+xml" title="facundo.dev"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://facundo.dev/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -237,21 +234,20 @@ Go Playground">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>After benchmarking other solutions, this came out to be the most efficient.</p>
-
 <p><a href="https://play.golang.org/p/eNMOIlUFIRI">Go Playground</a></p>
-
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">split</span><span class="p">(</span><span class="nx">buf</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">lim</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[][]</span><span class="kt">string</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">chunk</span> <span class="p">[]</span><span class="kt">string</span>
-	<span class="nx">chunks</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([][]</span><span class="kt">string</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span><span class="o">/</span><span class="nx">lim</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">split</span><span class="p">(</span><span class="nx">buf</span> <span class="p">[</span><span class="p">]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">lim</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[</span><span class="p">]</span><span class="p">[</span><span class="p">]</span><span class="kt">string</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">chunk</span> <span class="p">[</span><span class="p">]</span><span class="kt">string</span>
+	<span class="nx">chunks</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="p">[</span><span class="p">]</span><span class="p">[</span><span class="p">]</span><span class="kt">string</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span><span class="o">/</span><span class="nx">lim</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 	<span class="k">for</span> <span class="nb">len</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="nx">lim</span> <span class="p">{</span>
-		<span class="nx">chunk</span><span class="p">,</span> <span class="nx">buf</span> <span class="p">=</span> <span class="nx">buf</span><span class="p">[:</span><span class="nx">lim</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="nx">lim</span><span class="p">:]</span>
+		<span class="nx">chunk</span><span class="p">,</span> <span class="nx">buf</span> <span class="p">=</span> <span class="nx">buf</span><span class="p">[</span><span class="p">:</span><span class="nx">lim</span><span class="p">]</span><span class="p">,</span> <span class="nx">buf</span><span class="p">[</span><span class="nx">lim</span><span class="p">:</span><span class="p">]</span>
 		<span class="nx">chunks</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">chunks</span><span class="p">,</span> <span class="nx">chunk</span><span class="p">)</span>
 	<span class="p">}</span>
 	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
-		<span class="nx">chunks</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">chunks</span><span class="p">,</span> <span class="nx">buf</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">buf</span><span class="p">)])</span>
+		<span class="nx">chunks</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">chunks</span><span class="p">,</span> <span class="nx">buf</span><span class="p">[</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span><span class="p">]</span><span class="p">)</span>
 	<span class="p">}</span>
 	<span class="k">return</span> <span class="nx">chunks</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span>
+</code></pre></div>
 
         
           <div class="blog-tags">
@@ -275,6 +271,10 @@ Go Playground">
               <a href="https://facundo.dev/posts/20191027-aesgcm-encryption/" data-toggle="tooltip" data-placement="top" title="AES-GCM encryption in Go">&larr; Previous Post</a>
             </li>
           
+          
+            <li class="next">
+              <a href="https://facundo.dev/posts/20191127-remove-all-docker-images/" data-toggle="tooltip" data-placement="top" title="Remove all Docker images and containers">Next Post &rarr;</a>
+            </li>
           
         </ul>
       
@@ -346,7 +346,7 @@ Go Playground">
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.59.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.60.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>
