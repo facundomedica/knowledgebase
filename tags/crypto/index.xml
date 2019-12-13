@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>crypto on facundo.dev</title>
+    <link>https://facundo.dev/tags/crypto/</link>
+    <description>Recent content in crypto on facundo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>facundo@protonmail.com (Facundo Medica)</managingEditor>
+    <webMaster>facundo@protonmail.com (Facundo Medica)</webMaster>
+    <lastBuildDate>Sun, 27 Oct 2019 16:33:21 -0300</lastBuildDate>
+    
+	<atom:link href="https://facundo.dev/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AES-GCM encryption in Go</title>
+      <link>https://facundo.dev/posts/20191027-aesgcm-encryption/</link>
+      <pubDate>Sun, 27 Oct 2019 16:33:21 -0300</pubDate>
+      <author>facundo@protonmail.com (Facundo Medica)</author>
+      <guid>https://facundo.dev/posts/20191027-aesgcm-encryption/</guid>
+      <description>&lt;p&gt;Somehow I ended up using AES-GCM at least once per week, so I&#39;m tired of googling the same thing over and over. Here&#39;s a working example extracted from the book &lt;a href=&#34;https://astaxie.gitbooks.io/build-web-application-with-golang/en/09.6.html&#34;&gt;Build a web application with Golang&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Note: the key should be 32 bytes result of a safe hash function like SHA256.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/BmJe5AypJvH&#34;&gt;Go Playground&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
