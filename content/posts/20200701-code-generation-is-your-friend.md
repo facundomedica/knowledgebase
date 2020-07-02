@@ -38,7 +38,7 @@ A good startpoint in my opinion is having a generated client library and a gener
 - Code generators usually provide you with already well tested code, so yay! less time writing boring tests!
 
 
-But wait! You need to consider the following things before running into the office (or the Zoom/Google Meet/Jitsi/Microsoft Teams meeting):
+But wait! You need to consider the following things before running into the office (or the Zoom/Google Meet/Jitsi/Microsoft Teams meeting) to tell everyone about it:
 
 - **OpenAPI != Swagger** OpenAPI it's like Swagger 3.0, but make your research, take into account the features that each have (or lack), the availability of code generators for your desired languages and of course their quality. Spending extra time here will spare you from headaches in the future!
 - **Just because it's a valid YAML doesn't mean it's the right way** The job of keeping things consistent or following a structure (like REST) is on you, so don't think this the magical solution you were waiting for!
