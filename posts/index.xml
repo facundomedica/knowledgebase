@@ -8,10 +8,19 @@
     <language>en</language>
     <managingEditor>facundo@protonmail.com (Facundo Medica)</managingEditor>
     <webMaster>facundo@protonmail.com (Facundo Medica)</webMaster>
-    <lastBuildDate>Fri, 13 Dec 2019 11:05:15 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2020 22:23:02 -0300</lastBuildDate>
     
 	<atom:link href="https://facundo.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Code generation is your friend</title>
+      <link>https://facundo.dev/posts/20200701-code-generation-is-your-friend/</link>
+      <pubDate>Wed, 01 Jul 2020 22:23:02 -0300</pubDate>
+      <author>facundo@protonmail.com (Facundo Medica)</author>
+      <guid>https://facundo.dev/posts/20200701-code-generation-is-your-friend/</guid>
+      <description>As software developers we need to perform several tasks at the same time, but mainly coding, writing documentation and writing tests. And for every feature our current project requires we&#39;ll perform, to a greater or lesser extent, all of these three things. So we can deduce that if we reduce the time spent in any of these activities we are then reducing the time that it takes our team to finish a feature.</description>
+    </item>
     
     <item>
       <title>Print the contents of an object in Python</title>
