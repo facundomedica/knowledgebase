@@ -57,7 +57,7 @@
     "name" : "Facundo Medica"
   },
   "headline": "Code generation is your friend",
-  "description" : "As software developers we need to perform several tasks at the same time, but mainly coding, writing documentation and writing tests. And for every feature our current project requires we\x27ll perform, to a greater or lesser extent, all of these three things. So we can deduce that if we reduce the time spent in any of these activities we are then reducing the time that it takes our team to finish a feature.",
+  "description" : "As software developers we need to perform several tasks at the same time, but mainly coding, writing documentation and writing tests. And for every feature our current project requires we\u0026rsquo;ll perform, to a greater or lesser extent, all of these three things. So we can deduce that if we reduce the time spent in any of these activities we are then reducing the time that it takes our team to finish a feature.",
   "inLanguage" : "en",
   "wordCount":  711 ,
   "datePublished" : "2020-07-01T22:23:02",
@@ -87,7 +87,7 @@
   <meta name="twitter:title" content="Code generation is your friend" />
   <meta name="twitter:description" content="Boost your team&#39;s performance while keeping structure neat and tidy">
   <meta name="twitter:card" content="summary" />
-  <meta name="generator" content="Hugo 0.61.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <link rel="alternate" href="https://facundo.dev/index.xml" type="application/rss+xml" title="facundo.dev"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://facundo.dev/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -234,23 +234,23 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>As software developers we need to perform several tasks <em>at the same time</em>, but mainly coding, writing documentation and writing tests. And for every feature our current project requires we'll perform, to a greater or lesser extent, all of these three things. So we can deduce that if we reduce the time spent in any of these activities we are then reducing the time that it takes our team to finish a feature.</p>
+        <p>As software developers we need to perform several tasks <em>at the same time</em>, but mainly coding, writing documentation and writing tests. And for every feature our current project requires we&rsquo;ll perform, to a greater or lesser extent, all of these three things. So we can deduce that if we reduce the time spent in any of these activities we are then reducing the time that it takes our team to finish a feature.</p>
 <p>Common cases in that this post may be helpful:</p>
 <ul>
 <li>Backend developers having to write to the frontend devs about the changes of each endpoint, maybe even including payload examples.</li>
 <li>Frontend/backend repeating code or having to write multiple helper functions to aid networking</li>
-<li>API documentation hasn't been updated in a long time, and it may stay that way a little bit longer (<em>no one has time for that, right?</em>)</li>
-<li>The backend team rolled their own HTTP framework and now it's a PITA to maintain. We've all gone through this, we think we need our software to be <em>taylor-fitted</em> to our project but in reality a very small number of projects really need custom stuff. If you find something that looks like an special feature that no one ever implemented, then put some extra thought into it, I know you can simplify it!</li>
-<li>The frontend team complains about the backend team not being consistent (this won't be solved that easily, but now you can be inconsistent in an orderly manner 🤣)</li>
+<li>API documentation hasn&rsquo;t been updated in a long time, and it may stay that way a little bit longer (<em>no one has time for that, right?</em>)</li>
+<li>The backend team rolled their own HTTP framework and now it&rsquo;s a PITA to maintain. We&rsquo;ve all gone through this, we think we need our software to be <em>taylor-fitted</em> to our project but in reality a very small number of projects really need custom stuff. If you find something that looks like an special feature that no one ever implemented, then put some extra thought into it, I know you can simplify it!</li>
+<li>The frontend team complains about the backend team not being consistent (this won&rsquo;t be solved that easily, but now you can be inconsistent in an orderly manner 🤣)</li>
 </ul>
-<p>I'll be focusing on client-server/frontend-backend apps, more specifically the link between the parts and how we can make this interface as smooth as possible. The two tools described below were chosen by personal experience, do your own research to find the best fit for you, as there are hundreds of options.</p>
+<p>I&rsquo;ll be focusing on client-server/frontend-backend apps, more specifically the link between the parts and how we can make this interface as smooth as possible. The two tools described below were chosen by personal experience, do your own research to find the best fit for you, as there are hundreds of options.</p>
 <p><em>Maybe mention formal declarations?</em></p>
 <h2 id="swaggeropenapi">Swagger/OpenAPI</h2>
-<p>It's an open-source framework that helps us to design, build, document and consume HTTP APIs. It consists in a YAML document which holds all the definitions for our endpoints including their request and response objects.</p>
-<p>We can then use our yaml definition to create client and server libraries, static documentation, interfaces for easy manual testing (like <a href="https://editor.swagger.io">Swagger Editor</a>) and also tools for automated testing. But to be clear, you don't need to use all of the available tools to get benefit from this framework, you can adopt it gradually and start implementing more things as the team becomes more confortable with it.</p>
+<p>It&rsquo;s an open-source framework that helps us to design, build, document and consume HTTP APIs. It consists in a YAML document which holds all the definitions for our endpoints including their request and response objects.</p>
+<p>We can then use our yaml definition to create client and server libraries, static documentation, interfaces for easy manual testing (like <a href="https://editor.swagger.io">Swagger Editor</a>) and also tools for automated testing. But to be clear, you don&rsquo;t need to use all of the available tools to get benefit from this framework, you can adopt it gradually and start implementing more things as the team becomes more confortable with it.</p>
 <p>A good startpoint in my opinion is having a generated client library and a generated HTTP framework for the backend:</p>
 <ul>
-<li>Best ROI. The amount of effort for this setup is extremely low compared to the amount of time that it'll save the team, even in the short term.</li>
+<li>Best ROI. The amount of effort for this setup is extremely low compared to the amount of time that it&rsquo;ll save the team, even in the short term.</li>
 <li>Get a tremendous jumpstart on documentation and accesibility of your APIs. In some cases it can replace tools like Postman completely.</li>
 <li>In many cases a code generator for the client will turn the API endpoints into native functions, so a <code>GET /users</code> becomes <code>ListUsers()</code>.</li>
 <li>On the backend you can focus on the business logic only, so forget about reinventing the wheel with a custom HTTP framework.</li>
@@ -258,9 +258,9 @@
 </ul>
 <p>But wait! You need to consider the following things before running into the office (or the Zoom/Google Meet/Jitsi/Microsoft Teams meeting) to tell everyone about it:</p>
 <ul>
-<li><strong>OpenAPI != Swagger</strong> OpenAPI it's like Swagger 3.0, but make your research, take into account the features that each have (or lack), the availability of code generators for your desired languages and of course their quality. Spending extra time here will spare you from headaches in the future!</li>
-<li><strong>Just because it's a valid YAML doesn't mean it's the right way</strong> The job of keeping things consistent or following a structure (like REST) is on you, so don't think this the magical solution you were waiting for!</li>
-<li><strong>It's not a drop-in replacement to whatever framework you are currently using</strong> Switching to a different framework is an always painful and cumbersome task, and this is no exception. But don't be scared! It's absolutely doable if you plan ahead and think critically about your next steps. If you have some kind of versioning along rolling updates then it should be a piece of cake 🍰.</li>
+<li><strong>OpenAPI != Swagger</strong> OpenAPI it&rsquo;s like Swagger 3.0, but make your research, take into account the features that each have (or lack), the availability of code generators for your desired languages and of course their quality. Spending extra time here will spare you from headaches in the future!</li>
+<li><strong>Just because it&rsquo;s a valid YAML doesn&rsquo;t mean it&rsquo;s the right way</strong> The job of keeping things consistent or following a structure (like REST) is on you, so don&rsquo;t think this the magical solution you were waiting for!</li>
+<li><strong>It&rsquo;s not a drop-in replacement to whatever framework you are currently using</strong> Switching to a different framework is an always painful and cumbersome task, and this is no exception. But don&rsquo;t be scared! It&rsquo;s absolutely doable if you plan ahead and think critically about your next steps. If you have some kind of versioning along rolling updates then it should be a piece of cake 🍰.</li>
 </ul>
 <h2 id="grpc">gRPC</h2>
 <p>WIP :)</p>
@@ -351,7 +351,7 @@
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.61.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.73.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

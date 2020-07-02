@@ -19,7 +19,7 @@
       <pubDate>Wed, 01 Jul 2020 22:23:02 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
       <guid>https://facundo.dev/posts/20200701-code-generation-is-your-friend/</guid>
-      <description>As software developers we need to perform several tasks at the same time, but mainly coding, writing documentation and writing tests. And for every feature our current project requires we&#39;ll perform, to a greater or lesser extent, all of these three things. So we can deduce that if we reduce the time spent in any of these activities we are then reducing the time that it takes our team to finish a feature.</description>
+      <description>As software developers we need to perform several tasks at the same time, but mainly coding, writing documentation and writing tests. And for every feature our current project requires we&amp;rsquo;ll perform, to a greater or lesser extent, all of these three things. So we can deduce that if we reduce the time spent in any of these activities we are then reducing the time that it takes our team to finish a feature.</description>
     </item>
     
     <item>
@@ -56,7 +56,7 @@
       <pubDate>Sun, 27 Oct 2019 16:33:21 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
       <guid>https://facundo.dev/posts/20191027-aesgcm-encryption/</guid>
-      <description>&lt;p&gt;Somehow I ended up using AES-GCM at least once per week, so I&#39;m tired of googling the same thing over and over. Here&#39;s a working example extracted from the book &lt;a href=&#34;https://astaxie.gitbooks.io/build-web-application-with-golang/en/09.6.html&#34;&gt;Build a web application with Golang&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;Somehow I ended up using AES-GCM at least once per week, so I&amp;rsquo;m tired of googling the same thing over and over. Here&amp;rsquo;s a working example extracted from the book &lt;a href=&#34;https://astaxie.gitbooks.io/build-web-application-with-golang/en/09.6.html&#34;&gt;Build a web application with Golang&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Note: the key should be 32 bytes result of a safe hash function like SHA256.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/BmJe5AypJvH&#34;&gt;Go Playground&lt;/a&gt;&lt;/p&gt;</description>
     </item>
@@ -77,7 +77,7 @@ python -m SimpleHTTPServer python3 -m http.server </description>
       <pubDate>Thu, 24 Oct 2019 23:18:02 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
       <guid>https://facundo.dev/posts/20191024-first-post/</guid>
-      <description>This is my second blog ever (maybe I&#39;ll write about my first one someday).
+      <description>This is my second blog ever (maybe I&amp;rsquo;ll write about my first one someday).
 This time in a &amp;ldquo;knowledge base&amp;rdquo; format, meaning that a full post could be just a snippet of code or a 100 paragraph story.</description>
     </item>
     

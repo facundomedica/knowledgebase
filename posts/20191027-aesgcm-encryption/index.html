@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>AES-GCM encryption in Go - facundo.dev</title>
-  <meta name="description" content="Somehow I ended up using AES-GCM at least once per week, so I&#39;m tired of googling the same thing over and over. Here&#39;s a working example extracted from the book Build a web application with Golang.
+  <meta name="description" content="Somehow I ended up using AES-GCM at least once per week, so I&rsquo;m tired of googling the same thing over and over. Here&rsquo;s a working example extracted from the book Build a web application with Golang.
 Note: the key should be 32 bytes result of a safe hash function like SHA256.
 Go Playground">
   <meta name="author" content="Facundo Medica"/><script type="application/ld+json">
@@ -59,7 +59,7 @@ Go Playground">
     "name" : "Facundo Medica"
   },
   "headline": "AES-GCM encryption in Go",
-  "description" : "Somehow I ended up using AES-GCM at least once per week, so I\x27m tired of googling the same thing over and over. Here\x27s a working example extracted from the book Build a web application with Golang.\nNote: the key should be 32 bytes result of a safe hash function like SHA256.\nGo Playground\n",
+  "description" : "Somehow I ended up using AES-GCM at least once per week, so I\u0026rsquo;m tired of googling the same thing over and over. Here\u0026rsquo;s a working example extracted from the book Build a web application with Golang.\nNote: the key should be 32 bytes result of a safe hash function like SHA256.\nGo Playground\n",
   "inLanguage" : "en",
   "wordCount":  238 ,
   "datePublished" : "2019-10-27T16:33:21",
@@ -81,7 +81,7 @@ Go Playground">
 </script>
 
 <meta property="og:title" content="AES-GCM encryption in Go" />
-<meta property="og:description" content="Somehow I ended up using AES-GCM at least once per week, so I&#39;m tired of googling the same thing over and over. Here&#39;s a working example extracted from the book Build a web application with Golang.
+<meta property="og:description" content="Somehow I ended up using AES-GCM at least once per week, so I&rsquo;m tired of googling the same thing over and over. Here&rsquo;s a working example extracted from the book Build a web application with Golang.
 Note: the key should be 32 bytes result of a safe hash function like SHA256.
 Go Playground">
 <meta property="og:url" content="https://facundo.dev/posts/20191027-aesgcm-encryption/" />
@@ -89,9 +89,9 @@ Go Playground">
 <meta property="og:site_name" content="facundo.dev" />
 
   <meta name="twitter:title" content="AES-GCM encryption in Go" />
-  <meta name="twitter:description" content="Somehow I ended up using AES-GCM at least once per week, so I&#39;m tired of googling the same thing over and over. Here&#39;s a working example extracted from the book Build a web application with Golang. …">
+  <meta name="twitter:description" content="Somehow I ended up using AES-GCM at least once per week, so I&rsquo;m tired of googling the same thing over and over. Here&rsquo;s a working example extracted from the book Build a web application …">
   <meta name="twitter:card" content="summary" />
-  <meta name="generator" content="Hugo 0.61.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <link rel="alternate" href="https://facundo.dev/index.xml" type="application/rss+xml" title="facundo.dev"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://facundo.dev/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -234,7 +234,7 @@ Go Playground">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>Somehow I ended up using AES-GCM at least once per week, so I'm tired of googling the same thing over and over. Here's a working example extracted from the book <a href="https://astaxie.gitbooks.io/build-web-application-with-golang/en/09.6.html">Build a web application with Golang</a>.</p>
+        <p>Somehow I ended up using AES-GCM at least once per week, so I&rsquo;m tired of googling the same thing over and over. Here&rsquo;s a working example extracted from the book <a href="https://astaxie.gitbooks.io/build-web-application-with-golang/en/09.6.html">Build a web application with Golang</a>.</p>
 <p>Note: the key should be 32 bytes result of a safe hash function like SHA256.</p>
 <p><a href="https://play.golang.org/p/BmJe5AypJvH">Go Playground</a></p>
 <div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kn">package</span> <span class="nx">main</span>
@@ -249,9 +249,9 @@ Go Playground">
 	<span class="s">&#34;log&#34;</span>
 <span class="p">)</span>
 
-<span class="kd">func</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">text</span> <span class="o">:=</span> <span class="p">[</span><span class="p">]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&#34;Hola mundo&#34;</span><span class="p">)</span>
-	<span class="nx">key</span> <span class="o">:=</span> <span class="p">[</span><span class="p">]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&#34;the-key-has-to-be-32-bytes-long!&#34;</span><span class="p">)</span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">text</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&#34;Hola mundo&#34;</span><span class="p">)</span>
+	<span class="nx">key</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&#34;the-key-has-to-be-32-bytes-long!&#34;</span><span class="p">)</span>
 
 	<span class="nx">ciphertext</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nf">encrypt</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span>
 	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
@@ -268,7 +268,7 @@ Go Playground">
 	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%x =&gt; %s\n&#34;</span><span class="p">,</span> <span class="nx">ciphertext</span><span class="p">,</span> <span class="nx">plaintext</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="nf">encrypt</span><span class="p">(</span><span class="nx">plaintext</span> <span class="p">[</span><span class="p">]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">key</span> <span class="p">[</span><span class="p">]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">(</span><span class="p">[</span><span class="p">]</span><span class="kt">byte</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">func</span> <span class="nf">encrypt</span><span class="p">(</span><span class="nx">plaintext</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">key</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
 	<span class="nx">c</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">aes</span><span class="p">.</span><span class="nf">NewCipher</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
 	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
 		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
@@ -279,15 +279,15 @@ Go Playground">
 		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
 	<span class="p">}</span>
 
-	<span class="nx">nonce</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="p">[</span><span class="p">]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">gcm</span><span class="p">.</span><span class="nf">NonceSize</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">rand</span><span class="p">.</span><span class="nx">Reader</span><span class="p">,</span> <span class="nx">nonce</span><span class="p">)</span><span class="p">;</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+	<span class="nx">nonce</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">gcm</span><span class="p">.</span><span class="nf">NonceSize</span><span class="p">())</span>
+	<span class="k">if</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">rand</span><span class="p">.</span><span class="nx">Reader</span><span class="p">,</span> <span class="nx">nonce</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
 		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
 	<span class="p">}</span>
 
-	<span class="k">return</span> <span class="nx">gcm</span><span class="p">.</span><span class="nf">Seal</span><span class="p">(</span><span class="nx">nonce</span><span class="p">,</span> <span class="nx">nonce</span><span class="p">,</span> <span class="nx">plaintext</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span><span class="p">,</span> <span class="kc">nil</span>
+	<span class="k">return</span> <span class="nx">gcm</span><span class="p">.</span><span class="nf">Seal</span><span class="p">(</span><span class="nx">nonce</span><span class="p">,</span> <span class="nx">nonce</span><span class="p">,</span> <span class="nx">plaintext</span><span class="p">,</span> <span class="kc">nil</span><span class="p">),</span> <span class="kc">nil</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="nx">ciphertext</span> <span class="p">[</span><span class="p">]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">key</span> <span class="p">[</span><span class="p">]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">(</span><span class="p">[</span><span class="p">]</span><span class="kt">byte</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">func</span> <span class="nf">decrypt</span><span class="p">(</span><span class="nx">ciphertext</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">key</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
 	<span class="nx">c</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">aes</span><span class="p">.</span><span class="nf">NewCipher</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
 	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
 		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
@@ -298,12 +298,12 @@ Go Playground">
 		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
 	<span class="p">}</span>
 
-	<span class="nx">nonceSize</span> <span class="o">:=</span> <span class="nx">gcm</span><span class="p">.</span><span class="nf">NonceSize</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">nonceSize</span> <span class="o">:=</span> <span class="nx">gcm</span><span class="p">.</span><span class="nf">NonceSize</span><span class="p">()</span>
 	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">ciphertext</span><span class="p">)</span> <span class="p">&lt;</span> <span class="nx">nonceSize</span> <span class="p">{</span>
 		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;ciphertext too short&#34;</span><span class="p">)</span>
 	<span class="p">}</span>
 
-	<span class="nx">nonce</span><span class="p">,</span> <span class="nx">ciphertext</span> <span class="o">:=</span> <span class="nx">ciphertext</span><span class="p">[</span><span class="p">:</span><span class="nx">nonceSize</span><span class="p">]</span><span class="p">,</span> <span class="nx">ciphertext</span><span class="p">[</span><span class="nx">nonceSize</span><span class="p">:</span><span class="p">]</span>
+	<span class="nx">nonce</span><span class="p">,</span> <span class="nx">ciphertext</span> <span class="o">:=</span> <span class="nx">ciphertext</span><span class="p">[:</span><span class="nx">nonceSize</span><span class="p">],</span> <span class="nx">ciphertext</span><span class="p">[</span><span class="nx">nonceSize</span><span class="p">:]</span>
 	<span class="k">return</span> <span class="nx">gcm</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="nx">nonce</span><span class="p">,</span> <span class="nx">ciphertext</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -407,7 +407,7 @@ Go Playground">
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.61.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.73.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>
