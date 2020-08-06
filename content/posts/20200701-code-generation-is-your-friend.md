@@ -1,10 +1,10 @@
 ---
-title: "Code generation is your friend"
+title: "The beauty of formally defined APIs"
 author: "Facundo Medica"
 type: "post"
 date: 2020-07-01T22:23:02-03:00
 draft: false
-subtitle: "Boost your team's performance while keeping structure neat and tidy"
+subtitle: "Part 1: Swagger/OpenAPI"
 image: ""
 tags: []
 ---
@@ -20,8 +20,6 @@ Common cases that this post may be helpful in:
 - The frontend team complains about the backend team not being consistent (this won't be solved that easily, but now you can be inconsistent in an orderly manner 🤣)
 
 I'll be focusing on client-server/frontend-backend apps, more specifically the link between the parts and how we can make this interface as smooth as possible. The two tools described below were chosen by personal experience. **Do your own research to find the best fit for you, as there are hundreds of options.**
-
-_Maybe mention formal declarations?_
 
 ## Swagger/OpenAPI
 
@@ -44,10 +42,4 @@ But wait! You need to consider the following things before running into the offi
 - **Just because it's a valid YAML doesn't mean it's the right way.** The job of keeping things consistent or following a structure (like REST) is on you, so don't think this is the magical solution you were waiting for!
 - **It's not a drop-in replacement to whatever framework you are currently using.** Switching to a different framework is an always painful and cumbersome task, and this is no exception. But don't be scared! It's absolutely doable if you plan ahead and think critically about your next steps. If you have some kind of versioning along rolling updates then it should be a piece of cake 🍰.
 
-## gRPC
-
-> Disclaimer: I'm openly a gRPC fanboy, although I'll _try_ to keep the following paragraphs unbiased
-
-gRPC is an open-source RPC framework that uses http/2 based transport.
-
-**WIP**
+Stay tuned for a gRPC focused post!
