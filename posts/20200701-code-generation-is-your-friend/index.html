@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Code generation is your friend - facundo.dev</title>
-  <meta name="description" content="Boost your team&#39;s performance while keeping structure neat and tidy">
+  <title>The beauty of formally defined APIs - facundo.dev</title>
+  <meta name="description" content="Part 1: Swagger/OpenAPI">
   <meta name="author" content="Facundo Medica"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -45,7 +45,7 @@
         "position": 3,
         "item": {
           "@id": "https:\/\/facundo.dev\/posts\/20200701-code-generation-is-your-friend\/",
-          "name": "Code generation is your friend"
+          "name": "The beauty of formally defined a p is"
         }
     }]
 }
@@ -56,10 +56,10 @@
   "author": {
     "name" : "Facundo Medica"
   },
-  "headline": "Code generation is your friend",
+  "headline": "The beauty of formally defined APIs",
   "description" : "As software developers we need to perform several tasks at the same time, coding, writing documentation and writing tests. And for every feature our current project requires we\u0026rsquo;ll perform, to a greater or lesser extent, all of these three things. So we can deduce that if we reduce the time spent in any of these activities we are then reducing the time that it takes our team to finish a feature.",
   "inLanguage" : "en",
-  "wordCount":  737 ,
+  "wordCount":  712 ,
   "datePublished" : "2020-07-01T22:23:02",
   "dateModified" : "2020-07-01T22:23:02",
   "image" : "https:\/\/facundo.dev",
@@ -78,14 +78,14 @@
 }
 </script>
 
-<meta property="og:title" content="Code generation is your friend" />
-<meta property="og:description" content="Boost your team&#39;s performance while keeping structure neat and tidy">
+<meta property="og:title" content="The beauty of formally defined APIs" />
+<meta property="og:description" content="Part 1: Swagger/OpenAPI">
 <meta property="og:url" content="https://facundo.dev/posts/20200701-code-generation-is-your-friend/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="facundo.dev" />
 
-  <meta name="twitter:title" content="Code generation is your friend" />
-  <meta name="twitter:description" content="Boost your team&#39;s performance while keeping structure neat and tidy">
+  <meta name="twitter:title" content="The beauty of formally defined APIs" />
+  <meta name="twitter:description" content="Part 1: Swagger/OpenAPI">
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.73.0" />
   <link rel="alternate" href="https://facundo.dev/index.xml" type="application/rss+xml" title="facundo.dev"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -195,12 +195,12 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Code generation is your friend</h1>
+                <h1>The beauty of formally defined APIs</h1>
               
               
               
                 
-                  <h2 class="post-subheading">Boost your team&#39;s performance while keeping structure neat and tidy</h2>
+                  <h2 class="post-subheading">Part 1: Swagger/OpenAPI</h2>
                 
               
               
@@ -244,7 +244,6 @@
 <li>The frontend team complains about the backend team not being consistent (this won&rsquo;t be solved that easily, but now you can be inconsistent in an orderly manner 🤣)</li>
 </ul>
 <p>I&rsquo;ll be focusing on client-server/frontend-backend apps, more specifically the link between the parts and how we can make this interface as smooth as possible. The two tools described below were chosen by personal experience. <strong>Do your own research to find the best fit for you, as there are hundreds of options.</strong></p>
-<p><em>Maybe mention formal declarations?</em></p>
 <h2 id="swaggeropenapi">Swagger/OpenAPI</h2>
 <p>It&rsquo;s an open-source framework that helps us to design, build, document and consume HTTP APIs. It consists in a YAML document which holds all the definitions for our endpoints including their request and response objects.</p>
 <p>We can then use our yaml definition to create client and server libraries, static documentation, interfaces for easy manual testing (like <a href="https://editor.swagger.io">Swagger Editor</a>) and also tools for automated testing. But to be clear, you don&rsquo;t need to use all of the available tools to get benefit from this framework, you can adopt it gradually and start implementing more things as the team becomes more comfortable with it.</p>
@@ -262,12 +261,7 @@
 <li><strong>Just because it&rsquo;s a valid YAML doesn&rsquo;t mean it&rsquo;s the right way.</strong> The job of keeping things consistent or following a structure (like REST) is on you, so don&rsquo;t think this is the magical solution you were waiting for!</li>
 <li><strong>It&rsquo;s not a drop-in replacement to whatever framework you are currently using.</strong> Switching to a different framework is an always painful and cumbersome task, and this is no exception. But don&rsquo;t be scared! It&rsquo;s absolutely doable if you plan ahead and think critically about your next steps. If you have some kind of versioning along rolling updates then it should be a piece of cake 🍰.</li>
 </ul>
-<h2 id="grpc">gRPC</h2>
-<blockquote>
-<p>Disclaimer: I&rsquo;m openly a gRPC fanboy, although I&rsquo;ll <em>try</em> to keep the following paragraphs unbiased</p>
-</blockquote>
-<p>gRPC is an open-source RPC framework that uses http/2 based transport.</p>
-<p><strong>WIP</strong></p>
+<p>Stay tuned for a gRPC focused post!</p>
 
 
         
