@@ -2,55 +2,55 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on facundo.dev</title>
-    <link>/tags/</link>
+    <link>https://facundo.dev/tags/</link>
     <description>Recent content in Tags on facundo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>facundo@protonmail.com (Facundo Medica)</managingEditor>
     <webMaster>facundo@protonmail.com (Facundo Medica)</webMaster>
-    <lastBuildDate>Fri, 13 Dec 2019 11:05:15 -0300</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Dec 2019 11:05:15 -0300</lastBuildDate><atom:link href="https://facundo.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python</title>
-      <link>/tags/python/</link>
+      <link>https://facundo.dev/tags/python/</link>
       <pubDate>Fri, 13 Dec 2019 11:05:15 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>/tags/python/</guid>
+      <guid>https://facundo.dev/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>snippets</title>
-      <link>/tags/snippets/</link>
+      <link>https://facundo.dev/tags/snippets/</link>
       <pubDate>Fri, 13 Dec 2019 11:05:15 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>/tags/snippets/</guid>
+      <guid>https://facundo.dev/tags/snippets/</guid>
       <description></description>
     </item>
     
     <item>
       <title>docker</title>
-      <link>/tags/docker/</link>
+      <link>https://facundo.dev/tags/docker/</link>
       <pubDate>Wed, 27 Nov 2019 16:42:42 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>/tags/docker/</guid>
+      <guid>https://facundo.dev/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>go</title>
-      <link>/tags/go/</link>
+      <link>https://facundo.dev/tags/go/</link>
       <pubDate>Fri, 01 Nov 2019 19:55:15 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>/tags/go/</guid>
+      <guid>https://facundo.dev/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>crypto</title>
-      <link>/tags/crypto/</link>
+      <link>https://facundo.dev/tags/crypto/</link>
       <pubDate>Sun, 27 Oct 2019 16:33:21 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>/tags/crypto/</guid>
+      <guid>https://facundo.dev/tags/crypto/</guid>
       <description></description>
     </item>
     
