@@ -1,4 +1,4 @@
-baseURL = "https://facundo.dev"
+baseURL = ""
 languageCode = "en"
 title = "facundo.dev"
 theme = "beautifulhugo"
@@ -8,6 +8,8 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClassic = true
 pygmentOptions = "linenos=inline"
+relativeURLs = true
+canonifyURLs=true
 
 [Params]
   mainSections = ["post","posts"]
