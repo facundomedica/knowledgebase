@@ -2,23 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docker on facundo.dev</title>
-    <link>https://facundo.dev/tags/docker/</link>
+    <link>/tags/docker/</link>
     <description>Recent content in docker on facundo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>facundo@protonmail.com (Facundo Medica)</managingEditor>
     <webMaster>facundo@protonmail.com (Facundo Medica)</webMaster>
-    <lastBuildDate>Wed, 27 Nov 2019 16:42:42 -0300</lastBuildDate>
-    
-	<atom:link href="https://facundo.dev/tags/docker/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 27 Nov 2019 16:42:42 -0300</lastBuildDate><atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Remove all Docker images and containers</title>
-      <link>https://facundo.dev/posts/20191127-remove-all-docker-images/</link>
+      <link>/posts/20191127-remove-all-docker-images/</link>
       <pubDate>Wed, 27 Nov 2019 16:42:42 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>https://facundo.dev/posts/20191127-remove-all-docker-images/</guid>
+      <guid>/posts/20191127-remove-all-docker-images/</guid>
       <description>docker stop $(docker ps -a -q) docker rm $(docker ps -a -q) docker rmi $(docker images -a -q) </description>
     </item>
     
