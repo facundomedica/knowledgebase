@@ -1,4 +1,4 @@
-baseURL = ""
+baseURL = "https://facundo.dev"
 languageCode = "en"
 title = "facundo.dev"
 theme = "beautifulhugo"
