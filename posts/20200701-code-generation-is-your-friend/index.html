@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>The beauty of formally defined APIs - facundo.dev</title>
+  <meta name="description" content="Part 1: Swagger/OpenAPI">
+  <meta name="author" content="Facundo Medica"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "facundo.dev",
+    
+    "url": "https:\/\/facundo.dev"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/facundo.dev"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/facundo.dev",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/facundo.dev\/posts\/20200701-code-generation-is-your-friend\/",
+          "name": "The beauty of formally defined apis"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Facundo Medica"
+  },
+  "headline": "The beauty of formally defined APIs",
+  "description" : "As software developers we need to perform several tasks at the same time, coding, writing documentation and writing tests. And for every feature our current project requires we\u0026rsquo;ll perform, to a greater or lesser extent, all of these three things. So we can deduce that if we reduce the time spent in any of these activities we are then reducing the time that it takes our team to finish a feature.",
+  "inLanguage" : "en",
+  "wordCount":  712 ,
+  "datePublished" : "2020-07-01T22:23:02",
+  "dateModified" : "2020-07-01T22:23:02",
+  "image" : "https:\/\/facundo.dev",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/facundo.dev\/posts\/20200701-code-generation-is-your-friend\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/facundo.dev",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/facundo.dev",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="The beauty of formally defined APIs" />
+<meta property="og:description" content="Part 1: Swagger/OpenAPI">
+<meta property="og:url" content="https://facundo.dev/posts/20200701-code-generation-is-your-friend/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="facundo.dev" />
+
+  <meta name="twitter:title" content="The beauty of formally defined APIs" />
+  <meta name="twitter:description" content="Part 1: Swagger/OpenAPI">
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.88.1" />
+  <link rel="alternate" href="https://facundo.dev/index.xml" type="application/rss+xml" title="facundo.dev"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://facundo.dev/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://facundo.dev/css/syntax.css" /><link rel="stylesheet" href="https://facundo.dev/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://facundo.dev">facundo.dev</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>The beauty of formally defined APIs</h1>
+              
+              
+              
+                
+                  <h2 class="post-subheading">Part 1: Swagger/OpenAPI</h2>
+                
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 1, 2020
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Facundo Medica
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>As software developers we need to perform several tasks <em>at the same time</em>, coding, writing documentation and writing tests. And for every feature our current project requires we&rsquo;ll perform, to a greater or lesser extent, all of these three things. So we can deduce that if we reduce the time spent in any of these activities we are then reducing the time that it takes our team to finish a feature.</p>
+<p>Common cases that this post may be helpful in:</p>
+<ul>
+<li>Backend developers have to communicate the changes of each endpoint to frontend developers, maybe even including payload examples.</li>
+<li>Frontend/backend repeating code or having to write multiple helper functions to aid networking</li>
+<li>API documentation hasn&rsquo;t been updated in a long time, and it may stay that way a little bit longer (<em>no one has time for that, right?</em>)</li>
+<li>The backend team rolled their own HTTP framework out and now it&rsquo;s a PITA to maintain. We&rsquo;ve all gone through this. We, think that we need our software to be <em>taylor-fitted</em> to our project but in reality a very small number of projects really need custom stuff. If you find something that looks like a special feature that no one ever implemented, then put some extra thought into it, I know you can simplify it!</li>
+<li>The frontend team complains about the backend team not being consistent (this won&rsquo;t be solved that easily, but now you can be inconsistent in an orderly manner 🤣)</li>
+</ul>
+<p>I&rsquo;ll be focusing on client-server/frontend-backend apps, more specifically the link between the parts and how we can make this interface as smooth as possible. The two tools described below were chosen by personal experience. <strong>Do your own research to find the best fit for you, as there are hundreds of options.</strong></p>
+<h2 id="swaggeropenapi">Swagger/OpenAPI</h2>
+<p>It&rsquo;s an open-source framework that helps us to design, build, document and consume HTTP APIs. It consists in a YAML document which holds all the definitions for our endpoints including their request and response objects.</p>
+<p>We can then use our yaml definition to create client and server libraries, static documentation, interfaces for easy manual testing (like <a href="https://editor.swagger.io">Swagger Editor</a>) and also tools for automated testing. But to be clear, you don&rsquo;t need to use all of the available tools to get benefit from this framework, you can adopt it gradually and start implementing more things as the team becomes more comfortable with it.</p>
+<p>A good startpoint in my opinion is having a generated client library and a generated HTTP framework for the backend:</p>
+<ul>
+<li>Best ROI. The amount of effort for this setup is extremely low compared to the amount of time that it&rsquo;ll save the team, even in the short term.</li>
+<li>Get a tremendous jumpstart on documentation and accessibility of your APIs. In some cases it can replace tools like Postman completely.</li>
+<li>In many cases a code generator for the client will turn the API endpoints into native functions, so a <code>GET /users</code> becomes <code>ListUsers()</code>.</li>
+<li>On the backend you can focus on the business logic only, so forget about reinventing the wheel with a custom HTTP framework.</li>
+<li>Code generators usually provide you with already well tested code, so yay! less time writing boring tests!</li>
+</ul>
+<p>But wait! You need to consider the following things before running into the office (or the Zoom/Google Meet/Jitsi/Microsoft Teams meeting) to tell everyone about it:</p>
+<ul>
+<li><strong>OpenAPI != Swagger</strong> OpenAPI it&rsquo;s like Swagger 3.0, but do your research, take into account the features that each one has (or lack thereof), the availability of code generators for your desired languages and of course their quality. Spending extra time here will spare you from headaches in the future!</li>
+<li><strong>Just because it&rsquo;s a valid YAML doesn&rsquo;t mean it&rsquo;s the right way.</strong> The job of keeping things consistent or following a structure (like REST) is on you, so don&rsquo;t think this is the magical solution you were waiting for!</li>
+<li><strong>It&rsquo;s not a drop-in replacement to whatever framework you are currently using.</strong> Switching to a different framework is an always painful and cumbersome task, and this is no exception. But don&rsquo;t be scared! It&rsquo;s absolutely doable if you plan ahead and think critically about your next steps. If you have some kind of versioning along rolling updates then it should be a piece of cake 🍰.</li>
+</ul>
+<p>Stay tuned for a gRPC focused post!</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://facundo.dev/posts/20191213-pretty-print-python/" data-toggle="tooltip" data-placement="top" title="Print the contents of an object in Python">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://facundo.dev/posts/20210919-backup-jcenter/" data-toggle="tooltip" data-placement="top" title="Backup JCenter/Bintray Android dependency">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:facundo@protonmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/facundomedica" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/facundo-medica" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/5240559/facumedica" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://facundo.dev">Facundo Medica</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://facundo.dev">facundo.dev</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.88.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://facundo.dev/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://facundo.dev/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
