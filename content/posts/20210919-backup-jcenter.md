@@ -2,7 +2,7 @@
 title: "Backup JCenter/Bintray Android dependency"
 author: "Facundo Medica"
 type: "post"
-date: 2020-07-01T22:23:02-03:00
+date: 2021-09-19T22:23:02-03:00
 draft: false
 subtitle: "JFrog deprecated Bintray and JCenter, let's create a plan B"
 image: ""
