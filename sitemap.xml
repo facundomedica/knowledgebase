@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://facundo.dev/tags/android/</loc>
+    <lastmod>2020-07-01T22:23:02-03:00</lastmod>
+  </url><url>
+    <loc>https://facundo.dev/posts/20210919-backup-jcenter/</loc>
+    <lastmod>2020-07-01T22:23:02-03:00</lastmod>
+  </url><url>
     <loc>https://facundo.dev/</loc>
     <lastmod>2020-07-01T22:23:02-03:00</lastmod>
   </url><url>
+    <loc>https://facundo.dev/tags/hacks/</loc>
+    <lastmod>2020-07-01T22:23:02-03:00</lastmod>
+  </url><url>
     <loc>https://facundo.dev/posts/</loc>
+    <lastmod>2020-07-01T22:23:02-03:00</lastmod>
+  </url><url>
+    <loc>https://facundo.dev/tags/</loc>
     <lastmod>2020-07-01T22:23:02-03:00</lastmod>
   </url><url>
     <loc>https://facundo.dev/posts/20200701-code-generation-is-your-friend/</loc>
@@ -18,9 +30,6 @@
     <lastmod>2019-12-13T11:05:15-03:00</lastmod>
   </url><url>
     <loc>https://facundo.dev/tags/snippets/</loc>
-    <lastmod>2019-12-13T11:05:15-03:00</lastmod>
-  </url><url>
-    <loc>https://facundo.dev/tags/</loc>
     <lastmod>2019-12-13T11:05:15-03:00</lastmod>
   </url><url>
     <loc>https://facundo.dev/tags/docker/</loc>

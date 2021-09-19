@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>android on facundo.dev</title>
+    <link>https://facundo.dev/tags/android/</link>
+    <description>Recent content in android on facundo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>facundo@protonmail.com (Facundo Medica)</managingEditor>
+    <webMaster>facundo@protonmail.com (Facundo Medica)</webMaster>
+    <lastBuildDate>Wed, 01 Jul 2020 22:23:02 -0300</lastBuildDate><atom:link href="https://facundo.dev/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backup JCenter/Bintray Android dependency</title>
+      <link>https://facundo.dev/posts/20210919-backup-jcenter/</link>
+      <pubDate>Wed, 01 Jul 2020 22:23:02 -0300</pubDate>
+      <author>facundo@protonmail.com (Facundo Medica)</author>
+      <guid>https://facundo.dev/posts/20210919-backup-jcenter/</guid>
+      <description>A week ago I noticed that our Android builds were failing in the pipeline, the logs stated that it failed to download a couple of dependencies from JCenter with 502s, so I thought &amp;ldquo;no worries, I&amp;rsquo;ll just re-run the pipeline and it&amp;rsquo;ll get fixed!&amp;quot; Nope! The JCenter server was down for a while, so I decided to do some googleing and found out that JFrog had deprecated Bintray and JCenter earlier this year.</description>
+    </item>
+    
+  </channel>
+</rss>
