@@ -2,65 +2,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on facundo.dev</title>
-    <link>https://facundo.dev/posts/</link>
+    <link>/posts/</link>
     <description>Recent content in Posts on facundo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>facundo@protonmail.com (Facundo Medica)</managingEditor>
     <webMaster>facundo@protonmail.com (Facundo Medica)</webMaster>
-    <lastBuildDate>Sun, 19 Sep 2021 22:23:02 -0300</lastBuildDate><atom:link href="https://facundo.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Sep 2021 22:23:02 -0300</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backup JCenter/Bintray Android dependency</title>
-      <link>https://facundo.dev/posts/20210919-backup-jcenter/</link>
+      <link>/posts/20210919-backup-jcenter/</link>
       <pubDate>Sun, 19 Sep 2021 22:23:02 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>https://facundo.dev/posts/20210919-backup-jcenter/</guid>
+      <guid>/posts/20210919-backup-jcenter/</guid>
       <description>A week ago I noticed that our Android builds were failing in the pipeline, the logs stated that it failed to download a couple of dependencies from JCenter with 502s, so I thought &amp;ldquo;no worries, I&amp;rsquo;ll just re-run the pipeline and it&amp;rsquo;ll get fixed!&amp;quot; Nope! The JCenter server was down for a while, so I decided to do some googleing and found out that JFrog had deprecated Bintray and JCenter earlier this year.</description>
     </item>
     
     <item>
       <title>The beauty of formally defined APIs</title>
-      <link>https://facundo.dev/posts/20200701-code-generation-is-your-friend/</link>
+      <link>/posts/20200701-code-generation-is-your-friend/</link>
       <pubDate>Wed, 01 Jul 2020 22:23:02 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>https://facundo.dev/posts/20200701-code-generation-is-your-friend/</guid>
+      <guid>/posts/20200701-code-generation-is-your-friend/</guid>
       <description>As software developers we need to perform several tasks at the same time, coding, writing documentation and writing tests. And for every feature our current project requires we&amp;rsquo;ll perform, to a greater or lesser extent, all of these three things. So we can deduce that if we reduce the time spent in any of these activities we are then reducing the time that it takes our team to finish a feature.</description>
     </item>
     
     <item>
       <title>Print the contents of an object in Python</title>
-      <link>https://facundo.dev/posts/20191213-pretty-print-python/</link>
+      <link>/posts/20191213-pretty-print-python/</link>
       <pubDate>Fri, 13 Dec 2019 11:05:15 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>https://facundo.dev/posts/20191213-pretty-print-python/</guid>
+      <guid>/posts/20191213-pretty-print-python/</guid>
       <description>from pprint import pprint pprint(vars(response)) </description>
     </item>
     
     <item>
       <title>Remove all Docker images and containers</title>
-      <link>https://facundo.dev/posts/20191127-remove-all-docker-images/</link>
+      <link>/posts/20191127-remove-all-docker-images/</link>
       <pubDate>Wed, 27 Nov 2019 16:42:42 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>https://facundo.dev/posts/20191127-remove-all-docker-images/</guid>
+      <guid>/posts/20191127-remove-all-docker-images/</guid>
       <description>docker stop $(docker ps -a -q) docker rm $(docker ps -a -q) docker rmi $(docker images -a -q) </description>
     </item>
     
     <item>
       <title>Split slice in chunks</title>
-      <link>https://facundo.dev/posts/20191101-split-slice-in-chunks/</link>
+      <link>/posts/20191101-split-slice-in-chunks/</link>
       <pubDate>Fri, 01 Nov 2019 19:55:15 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>https://facundo.dev/posts/20191101-split-slice-in-chunks/</guid>
+      <guid>/posts/20191101-split-slice-in-chunks/</guid>
       <description>&lt;p&gt;After benchmarking other solutions, this came out to be the most efficient.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/eNMOIlUFIRI&#34;&gt;Go Playground&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>AES-GCM encryption in Go</title>
-      <link>https://facundo.dev/posts/20191027-aesgcm-encryption/</link>
+      <link>/posts/20191027-aesgcm-encryption/</link>
       <pubDate>Sun, 27 Oct 2019 16:33:21 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>https://facundo.dev/posts/20191027-aesgcm-encryption/</guid>
+      <guid>/posts/20191027-aesgcm-encryption/</guid>
       <description>&lt;p&gt;Somehow I ended up using AES-GCM at least once per week, so I&amp;rsquo;m tired of googling the same thing over and over. Here&amp;rsquo;s a working example extracted from the book &lt;a href=&#34;https://astaxie.gitbooks.io/build-web-application-with-golang/en/09.6.html&#34;&gt;Build a web application with Golang&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Note: the key should be 32 bytes result of a safe hash function like SHA256.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/BmJe5AypJvH&#34;&gt;Go Playground&lt;/a&gt;&lt;/p&gt;</description>
@@ -68,20 +68,20 @@
     
     <item>
       <title>Simple HTTP Server</title>
-      <link>https://facundo.dev/posts/20191027-simple-http-server/</link>
+      <link>/posts/20191027-simple-http-server/</link>
       <pubDate>Sun, 27 Oct 2019 15:55:39 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>https://facundo.dev/posts/20191027-simple-http-server/</guid>
+      <guid>/posts/20191027-simple-http-server/</guid>
       <description>Serve an entire directory easily with Python.
 python -m SimpleHTTPServer python3 -m http.server </description>
     </item>
     
     <item>
       <title>First Post</title>
-      <link>https://facundo.dev/posts/20191024-first-post/</link>
+      <link>/posts/20191024-first-post/</link>
       <pubDate>Thu, 24 Oct 2019 23:18:02 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>https://facundo.dev/posts/20191024-first-post/</guid>
+      <guid>/posts/20191024-first-post/</guid>
       <description>This is my second blog ever (maybe I&amp;rsquo;ll write about my first one someday).
 This time in a &amp;ldquo;knowledge base&amp;rdquo; format, meaning that a full post could be just a snippet of code or a 100 paragraph story.</description>
     </item>

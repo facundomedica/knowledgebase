@@ -2,60 +2,60 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://facundo.dev/tags/android/</loc>
+    <loc>/tags/android/</loc>
     <lastmod>2021-09-19T22:23:02-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/posts/20210919-backup-jcenter/</loc>
+    <loc>/posts/20210919-backup-jcenter/</loc>
     <lastmod>2021-09-19T22:23:02-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/</loc>
+    <loc>/</loc>
     <lastmod>2021-09-19T22:23:02-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/tags/hacks/</loc>
+    <loc>/tags/hacks/</loc>
     <lastmod>2021-09-19T22:23:02-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2021-09-19T22:23:02-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2021-09-19T22:23:02-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/posts/20200701-code-generation-is-your-friend/</loc>
+    <loc>/posts/20200701-code-generation-is-your-friend/</loc>
     <lastmod>2020-07-01T22:23:02-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/posts/20191213-pretty-print-python/</loc>
+    <loc>/posts/20191213-pretty-print-python/</loc>
     <lastmod>2019-12-13T11:05:15-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/tags/python/</loc>
+    <loc>/tags/python/</loc>
     <lastmod>2019-12-13T11:05:15-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/tags/snippets/</loc>
+    <loc>/tags/snippets/</loc>
     <lastmod>2019-12-13T11:05:15-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/tags/docker/</loc>
+    <loc>/tags/docker/</loc>
     <lastmod>2019-11-27T16:42:42-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/posts/20191127-remove-all-docker-images/</loc>
+    <loc>/posts/20191127-remove-all-docker-images/</loc>
     <lastmod>2019-11-27T16:42:42-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/tags/go/</loc>
+    <loc>/tags/go/</loc>
     <lastmod>2019-11-01T19:55:15-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/posts/20191101-split-slice-in-chunks/</loc>
+    <loc>/posts/20191101-split-slice-in-chunks/</loc>
     <lastmod>2019-11-01T19:55:15-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/posts/20191027-aesgcm-encryption/</loc>
+    <loc>/posts/20191027-aesgcm-encryption/</loc>
     <lastmod>2019-10-27T16:33:21-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/tags/crypto/</loc>
+    <loc>/tags/crypto/</loc>
     <lastmod>2019-10-27T16:33:21-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/posts/20191027-simple-http-server/</loc>
+    <loc>/posts/20191027-simple-http-server/</loc>
     <lastmod>2019-10-27T15:55:39-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/posts/20191024-first-post/</loc>
+    <loc>/posts/20191024-first-post/</loc>
     <lastmod>2019-10-24T23:18:02-03:00</lastmod>
   </url><url>
-    <loc>https://facundo.dev/categories/</loc>
+    <loc>/categories/</loc>
   </url>
 </urlset>

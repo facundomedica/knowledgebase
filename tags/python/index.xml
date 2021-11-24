@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on facundo.dev</title>
-    <link>https://facundo.dev/tags/python/</link>
+    <link>/tags/python/</link>
     <description>Recent content in python on facundo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>facundo@protonmail.com (Facundo Medica)</managingEditor>
     <webMaster>facundo@protonmail.com (Facundo Medica)</webMaster>
-    <lastBuildDate>Fri, 13 Dec 2019 11:05:15 -0300</lastBuildDate><atom:link href="https://facundo.dev/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Dec 2019 11:05:15 -0300</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Print the contents of an object in Python</title>
-      <link>https://facundo.dev/posts/20191213-pretty-print-python/</link>
+      <link>/posts/20191213-pretty-print-python/</link>
       <pubDate>Fri, 13 Dec 2019 11:05:15 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>https://facundo.dev/posts/20191213-pretty-print-python/</guid>
+      <guid>/posts/20191213-pretty-print-python/</guid>
       <description>from pprint import pprint pprint(vars(response)) </description>
     </item>
     
