@@ -8,7 +8,7 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClassic = true
 pygmentOptions = "linenos=inline"
-#relativeURLs = true
+relativeURLs = true
 #canonifyURLs=true
 
 [Params]
