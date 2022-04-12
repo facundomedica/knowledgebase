@@ -8,8 +8,8 @@ pygmentsCodeFences: true
 pygmentsCodefencesGuessSyntax: true
 pygmentsUseClassic: true
 pygmentOptions: "linenos=inline"
-# relativeUrls: true
-canonifyURLs: true
+relativeUrls: true
+# canonifyURLs: true
 
 params:
   mainSections: ["post","posts"]
