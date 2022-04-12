@@ -1,0 +1,26 @@
+baseURL: "/"
+languageCode: "en"
+title: "facundo.dev"
+theme: "hugo-xmin"
+pygmentsStyle: "trac"
+pygmentsUseClasses: true
+pygmentsCodeFences: true
+pygmentsCodefencesGuessSyntax: true
+pygmentsUseClassic: true
+pygmentOptions: "linenos=inline"
+# relativeUrls: true
+canonifyURLs: true
+
+params:
+  mainSections: ["post","posts"]
+  title: "A website built through Hugo and blogdown."
+  footer: "&copy; [Facundo Medica](https://facundo.dev) 2019 -- {Year} | [Github](https://github.com/facundomedica) | [Twitter](https://twitter.com/facundomedica)"
+#  useHLJS: true
+
+author:
+  name: "Facundo Medica"
+  website: "https://facundo.dev"
+  email: "facundo@protonmail.com"
+  github: "facundomedica"
+  linkedin: "facundo-medica"
+  stackoverflow: "users/5240559/facumedica"
