@@ -15,7 +15,7 @@
       <pubDate>Sun, 19 Sep 2021 22:23:02 -0300</pubDate>
       <author>facundo@protonmail.com (Facundo Medica)</author>
       <guid>/posts/20210919-backup-jcenter/</guid>
-      <description>A week ago I noticed that our Android builds were failing in the pipeline, the logs stated that it failed to download a couple of dependencies from JCenter with 502s, so I thought &amp;ldquo;no worries, I&amp;rsquo;ll just re-run the pipeline and it&amp;rsquo;ll get fixed!&amp;quot; Nope! The JCenter server was down for a while, so I decided to do some googleing and found out that JFrog had deprecated Bintray and JCenter earlier this year.</description>
+      <description>A week ago I noticed that our Android builds were failing in the pipeline, the logs stated that it failed to download a couple of dependencies from JCenter with 502s, so I thought &amp;ldquo;no worries, I&amp;rsquo;ll just re-run the pipeline and it&amp;rsquo;ll get fixed!&amp;rdquo; Nope! The JCenter server was down for a while, so I decided to do some googleing and found out that JFrog had deprecated Bintray and JCenter earlier this year.</description>
     </item>
     
     <item>

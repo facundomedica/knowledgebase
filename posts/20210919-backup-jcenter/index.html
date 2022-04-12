@@ -1,372 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Backup JCenter/Bintray Android dependency | facundo.dev</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
     
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-  <title>Backup JCenter/Bintray Android dependency - facundo.dev</title>
-  <meta name="description" content="JFrog deprecated Bintray and JCenter, let&#39;s create a plan B">
-  <meta name="author" content="Facundo Medica"/><script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "WebSite",
-    "name": "facundo.dev",
-    
-    "url": "\/"
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "",
-  "url": "\/"
-  
-  
-  
-  
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@id": "\/",
-          "name": "home"
-        }
-    },{
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@id": "\/posts\/20210919-backup-jcenter\/",
-          "name": "Backup jcenter bintray android dependency"
-        }
-    }]
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Article",
-  "author": {
-    "name" : "Facundo Medica"
-  },
-  "headline": "Backup JCenter\/Bintray Android dependency",
-  "description" : "A week ago I noticed that our Android builds were failing in the pipeline, the logs stated that it failed to download a couple of dependencies from JCenter with 502s, so I thought \u0026ldquo;no worries, I\u0026rsquo;ll just re-run the pipeline and it\u0026rsquo;ll get fixed!\u0026quot; Nope! The JCenter server was down for a while, so I decided to do some googleing and found out that JFrog had deprecated Bintray and JCenter earlier this year.",
-  "inLanguage" : "en",
-  "wordCount":  298 ,
-  "datePublished" : "2021-09-19T22:23:02",
-  "dateModified" : "2021-09-19T22:23:02",
-  "image" : "\/",
-  "keywords" : [ "android, hacks" ],
-  "mainEntityOfPage" : "\/posts\/20210919-backup-jcenter\/",
-  "publisher" : {
-    "@type": "Organization",
-    "name" : "\/",
-    "logo" : {
-        "@type" : "ImageObject",
-        "url" : "\/",
-        "height" :  60 ,
-        "width" :  60
-    }
-  }
-}
-</script>
-
-<meta property="og:title" content="Backup JCenter/Bintray Android dependency" />
-<meta property="og:description" content="JFrog deprecated Bintray and JCenter, let&#39;s create a plan B">
-<meta property="og:url" content="/posts/20210919-backup-jcenter/" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="facundo.dev" />
-
-  <meta name="twitter:title" content="Backup JCenter/Bintray Android dependency" />
-  <meta name="twitter:description" content="JFrog deprecated Bintray and JCenter, let&#39;s create a plan B">
-  <meta name="twitter:card" content="summary" />
-  <meta name="generator" content="Hugo 0.89.4" />
-  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="facundo.dev"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="../../css/syntax.css" /><link rel="stylesheet" href="../../css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
-
-
-
   </head>
+
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="../../">facundo.dev</a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav navbar-right">
-        
-
-        
-
-        
-      </ul>
-    </div>
-
-    
-
-  </div>
-</nav>
-
-
-
-
-    
-
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
+    <nav>
+    <ul class="menu">
       
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Backup JCenter/Bintray Android dependency</span></h1>
+<h2 class="author">Facundo Medica</h2>
+<h2 class="date">2021/09/19</h2>
 </div>
 
-
-  
-  
-  
-
-
-
-
-
-
-  
-
-  <header class="header-section ">
-    
-    <div class="intro-header no-img">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-heading">
-              
-                <h1>Backup JCenter/Bintray Android dependency</h1>
-              
-              
-              
-                
-                  <h2 class="post-subheading">JFrog deprecated Bintray and JCenter, let&#39;s create a plan B</h2>
-                
-              
-              
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on September 19, 2021
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Facundo Medica
-    
-  
-  
-</span>
-
-
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-
-    
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
-        <p>A week ago I noticed that our Android builds were failing in the pipeline, the logs stated that it failed to download a couple of dependencies from JCenter with 502s, so I thought <em>&ldquo;no worries, I&rsquo;ll just re-run the pipeline and it&rsquo;ll get fixed!&quot;</em> <strong>Nope!</strong> The JCenter server was down for a while, so I decided to do some googleing and found out that JFrog had deprecated Bintray and JCenter <a href="https://blog.gradle.org/jcenter-shutdown">earlier this year</a>.</p>
+<main>
+<p>A week ago I noticed that our Android builds were failing in the pipeline, the logs stated that it failed to download a couple of dependencies from JCenter with 502s, so I thought <em>&ldquo;no worries, I&rsquo;ll just re-run the pipeline and it&rsquo;ll get fixed!&rdquo;</em> <strong>Nope!</strong> The JCenter server was down for a while, so I decided to do some googleing and found out that JFrog had deprecated Bintray and JCenter <a href="https://blog.gradle.org/jcenter-shutdown">earlier this year</a>.</p>
 <p>After a while everything was back to normal, but it was clear we had to stop using JCenter and use mavenCentral. This should have been an easy change, but it wasn&rsquo;t. <strong>The main dependency in our app is a closed source library that is exclusively published on JCenter by a trusted (<em>but with bad dev support</em>) third-party</strong>. So we couldn&rsquo;t just pull it from Github and use it as a submodule or something like that, we had to use a different approach.</p>
 <p>Of course we count on the publisher to migrate to mavenCentral some time in the future, but in the meantime we&rsquo;ll have this plan B ready to deploy whenever things go south (which for a service that&rsquo;s getting deprecated might be more often than usual).</p>
 <h2 id="presenting-the-plan-b-_scrape-the-entire-maven-directory-off-jcenter-for-this-dependency_">Presenting the plan B: <em>scrape the entire maven directory off JCenter for this dependency</em>.</h2>
 <h3 id="step-1">Step 1</h3>
 <h4 id="use-wget-to-download-everything-from-jcenter">Use wget to download everything from JCenter</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> mkdir localmaven <span class="o">&amp;&amp;</span> <span class="nb">cd</span> localmaven
- wget --recursive -np -nH -e <span class="nv">robots</span><span class="o">=</span>off -l5 http://jcenter.bintray.com/com/thevendorname/
-</code></pre></div><h3 id="step-2">Step 2</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> mkdir localmaven <span class="o">&amp;&amp;</span> <span class="nb">cd</span> localmaven
+</span></span><span class="line"><span class="cl"> wget --recursive -np -nH -e <span class="nv">robots</span><span class="o">=</span>off -l5 http://jcenter.bintray.com/com/thevendorname/
+</span></span></code></pre></div><h3 id="step-2">Step 2</h3>
 <h4 id="add-your-local-maven-repo-to-your-buildgradle">Add your local maven repo to your build.gradle</h4>
 <p>Under <code>allprojects</code> -&gt; <code>repositories</code> add the following (in the last position):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">        maven { url rootProject.rootDir.getAbsolutePath() + &#34;/localmaven&#34; }
-</code></pre></div><h3 id="step-3">Step 3</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        maven { url rootProject.rootDir.getAbsolutePath() + &#34;/localmaven&#34; }
+</span></span></code></pre></div><h3 id="step-3">Step 3</h3>
 <h4 id="remove-jcenter-optional">Remove jcenter (optional)</h4>
 <p>Given that the libraries on JCenter won&rsquo;t receive any more updates, you can safely remove it from your build.gradle once you&rsquo;ve made a copy of all the required dependencies.</p>
 
+</main>
 
-        
-          <div class="blog-tags">
-            
-              <a href="../../tags/android/">android</a>&nbsp;
-            
-              <a href="../../tags/hacks/">hacks</a>&nbsp;
-            
-          </div>
-        
-
-        
-
-        
-      </article>
-
-      
-        <ul class="pager blog-pager">
-          
-            <li class="previous">
-              <a href="../../posts/20200701-code-generation-is-your-friend/" data-toggle="tooltip" data-placement="top" title="The beauty of formally defined APIs">&larr; Previous Post</a>
-            </li>
-          
-          
-        </ul>
-      
-
-
-      
-
-    </div>
-  </div>
-</div>
-
-      
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="list-inline text-center footer-links">
-          
-              <li>
-                <a href="mailto:facundo@protonmail.com" title="Email me">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/facundomedica" title="GitHub">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com/in/facundo-medica" title="LinkedIn">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://stackoverflow.com/users/5240559/facumedica" title="StackOverflow">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-          
-        </ul>
-        <p class="credits copyright text-muted">
-          
-            
-              <a href="https://facundo.dev">Facundo Medica</a>
-            
-          
-
-          &nbsp;&bull;&nbsp;&copy;
-          
-            2021
-          
-
-          
-            &nbsp;&bull;&nbsp;
-            <a href="../../">facundo.dev</a>
-          
-        </p>
-        
-        <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.89.4</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<script src="../../js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="../../js/load-photoswipe.js"></script>
-
-
-
-
-
-
-
-
-
-    
+  <footer>
+  
+  
+  <hr/>
+  © <a href="https://facundo.dev">Facundo Medica</a> 2019 &ndash; 2022 | <a href="https://github.com/facundomedica">Github</a> | <a href="https://twitter.com/facundomedica">Twitter</a>
+  
+  </footer>
   </body>
 </html>
 
