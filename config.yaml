@@ -18,6 +18,9 @@ params:
     
 
     &copy; Facundo Medica 2019 -- {Year}
+permalinks:
+  note: "/note/:year/:month/:day/:slug/"
+  posts: "/posts/:year/:month/:day/:slug/"
 
 author:
   name: "Facundo Medica"
@@ -26,3 +29,18 @@ author:
   github: "facundomedica"
   linkedin: "facundo-medica"
   stackoverflow: "users/5240559/facumedica"
+
+menu:
+  main:
+    - name: home
+      url: ""
+      weight: 1
+    - name: about
+      url: "about/"
+      weight: 2
+    # - name: Categories
+    #   url: "categories/"
+    #   weight: 3
+    - name: tags
+      url: "tags/"
+      weight: 40

@@ -1,9 +1,14 @@
 {{ partial "header.html" . }}
 <div class="article-meta">
 <h1><span class="title">{{ .Title | markdownify }}</span></h1>
-{{ with .Params.author }}<h2 class="author">{{ . }}</h2>{{ end }}
-{{ if (gt .Params.date 0) }}<h2 class="date">{{ .Date.Format "2006/01/02" }}</h2>{{ end }}
+{{ if isset .Params "subtitle" }}<h3 class="subtitle">{{ .Params.Subtitle | markdownify }}</h3>{{ end }}
 </div>
+{{ if (gt .Params.date 0) }}<h4 class="date">{{ .Date.Format "2006-01-02" }}</h4>{{ end }}
+
+{{ if .Params.toc }}
+<b>Table of contents</b>
+{{ .TableOfContents }}
+{{ end }}
 
 <main>
 {{ .Content }}
