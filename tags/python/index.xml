@@ -6,15 +6,15 @@
     <description>Recent content in python on facundo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>facundo@protonmail.com (Facundo Medica)</managingEditor>
-    <webMaster>facundo@protonmail.com (Facundo Medica)</webMaster>
+    <managingEditor>facundomedica@protonmail.com (Facundo Medica)</managingEditor>
+    <webMaster>facundomedica@protonmail.com (Facundo Medica)</webMaster>
     <lastBuildDate>Fri, 13 Dec 2019 11:05:15 -0300</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Print the contents of an object in Python</title>
-      <link>/posts/20191213-pretty-print-python/</link>
+      <link>/posts/2019/12/13/print-the-contents-of-an-object-in-python/</link>
       <pubDate>Fri, 13 Dec 2019 11:05:15 -0300</pubDate>
-      <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>/posts/20191213-pretty-print-python/</guid>
+      <author>facundomedica@protonmail.com (Facundo Medica)</author>
+      <guid>/posts/2019/12/13/print-the-contents-of-an-object-in-python/</guid>
       <description>from pprint import pprint pprint(vars(response)) </description>
     </item>
     

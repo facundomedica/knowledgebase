@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Backup JCenter/Bintray Android dependency | facundo.dev</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="../../../../../../css/style.css" />
+    <link rel="stylesheet" href="../../../../../../css/fonts.css" />
     
   </head>
 
@@ -13,18 +13,27 @@
     <nav>
     <ul class="menu">
       
+      <li><a href="../../../../../../">home</a></li>
+      
+      <li><a href="../../../../../../about/">about</a></li>
+      
+      <li><a href="../../../../../../tags/">tags</a></li>
+      
     </ul>
     <hr/>
     </nav>
 
 <div class="article-meta">
 <h1><span class="title">Backup JCenter/Bintray Android dependency</span></h1>
-<h2 class="author">Facundo Medica</h2>
-<h2 class="date">2021/09/19</h2>
+<h3 class="subtitle">JFrog deprecated Bintray and JCenter, let&rsquo;s create a plan B</h3>
 </div>
+<h4 class="date">2021-09-19</h4>
+
+
 
 <main>
-<p>A week ago I noticed that our Android builds were failing in the pipeline, the logs stated that it failed to download a couple of dependencies from JCenter with 502s, so I thought <em>&ldquo;no worries, I&rsquo;ll just re-run the pipeline and it&rsquo;ll get fixed!&rdquo;</em> <strong>Nope!</strong> The JCenter server was down for a while, so I decided to do some googleing and found out that JFrog had deprecated Bintray and JCenter <a href="https://blog.gradle.org/jcenter-shutdown">earlier this year</a>.</p>
+<p>A week ago I noticed that our Android builds were failing in the pipeline, the logs stated that it failed to download a couple of dependencies from JCenter with 502s, so I thought <em>&ldquo;no worries, I&rsquo;ll just re-run the pipeline and it&rsquo;ll get fixed!&rdquo;</em> <strong>Nope!</strong> The JCenter server was down for a while, so I decided to do some googleing and found out that JFrog had deprecated Bintray and JCenter <a href="https://blog.gradle.org/jcenter-shutdown" target="_blank">earlier this year</a>
+.</p>
 <p>After a while everything was back to normal, but it was clear we had to stop using JCenter and use mavenCentral. This should have been an easy change, but it wasn&rsquo;t. <strong>The main dependency in our app is a closed source library that is exclusively published on JCenter by a trusted (<em>but with bad dev support</em>) third-party</strong>. So we couldn&rsquo;t just pull it from Github and use it as a submodule or something like that, we had to use a different approach.</p>
 <p>Of course we count on the publisher to migrate to mavenCentral some time in the future, but in the meantime we&rsquo;ll have this plan B ready to deploy whenever things go south (which for a service that&rsquo;s getting deprecated might be more often than usual).</p>
 <h2 id="presenting-the-plan-b-_scrape-the-entire-maven-directory-off-jcenter-for-this-dependency_">Presenting the plan B: <em>scrape the entire maven directory off JCenter for this dependency</em>.</h2>
@@ -46,7 +55,13 @@
   
   
   <hr/>
-  © <a href="https://facundo.dev">Facundo Medica</a> 2019 &ndash; 2022 | <a href="https://github.com/facundomedica">Github</a> | <a href="https://twitter.com/facundomedica">Twitter</a>
+  <p><a href="https://github.com/facundomedica" target="_blank">Github</a>
+ | <a href="https://twitter.com/facundomedica" target="_blank">Twitter</a>
+ | <a href="https://www.linkedin.com/in/fmedica/" target="_blank">LinkedIn</a>
+ | <a href="https://facundo.dev/Facundo_Medica_CV_may2022.pdf" target="_blank">My resume</a>
+</p>
+<p>© Facundo Medica 2019 &ndash; 2022</p>
+
   
   </footer>
   </body>

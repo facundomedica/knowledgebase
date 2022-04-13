@@ -6,16 +6,16 @@
     <description>Recent content in android on facundo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>facundo@protonmail.com (Facundo Medica)</managingEditor>
-    <webMaster>facundo@protonmail.com (Facundo Medica)</webMaster>
+    <managingEditor>facundomedica@protonmail.com (Facundo Medica)</managingEditor>
+    <webMaster>facundomedica@protonmail.com (Facundo Medica)</webMaster>
     <lastBuildDate>Sun, 19 Sep 2021 22:23:02 -0300</lastBuildDate><atom:link href="/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backup JCenter/Bintray Android dependency</title>
-      <link>/posts/20210919-backup-jcenter/</link>
+      <link>/posts/2021/09/19/backup-jcenter/bintray-android-dependency/</link>
       <pubDate>Sun, 19 Sep 2021 22:23:02 -0300</pubDate>
-      <author>facundo@protonmail.com (Facundo Medica)</author>
-      <guid>/posts/20210919-backup-jcenter/</guid>
-      <description>A week ago I noticed that our Android builds were failing in the pipeline, the logs stated that it failed to download a couple of dependencies from JCenter with 502s, so I thought &amp;ldquo;no worries, I&amp;rsquo;ll just re-run the pipeline and it&amp;rsquo;ll get fixed!&amp;rdquo; Nope! The JCenter server was down for a while, so I decided to do some googleing and found out that JFrog had deprecated Bintray and JCenter earlier this year.</description>
+      <author>facundomedica@protonmail.com (Facundo Medica)</author>
+      <guid>/posts/2021/09/19/backup-jcenter/bintray-android-dependency/</guid>
+      <description>A week ago I noticed that our Android builds were failing in the pipeline, the logs stated that it failed to download a couple of dependencies from JCenter with 502s, so I thought &amp;ldquo;no worries, I&amp;rsquo;ll just re-run the pipeline and it&amp;rsquo;ll get fixed!&amp;rdquo; Nope! The JCenter server was down for a while, so I decided to do some googleing and found out that JFrog had deprecated Bintray and JCenter earlier this year .</description>
     </item>
     
   </channel>

@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The beauty of formally defined APIs | facundo.dev</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+    <link rel="stylesheet" href="../../../../../css/fonts.css" />
     
   </head>
 
@@ -13,15 +13,23 @@
     <nav>
     <ul class="menu">
       
+      <li><a href="../../../../../">home</a></li>
+      
+      <li><a href="../../../../../about/">about</a></li>
+      
+      <li><a href="../../../../../tags/">tags</a></li>
+      
     </ul>
     <hr/>
     </nav>
 
 <div class="article-meta">
 <h1><span class="title">The beauty of formally defined APIs</span></h1>
-<h2 class="author">Facundo Medica</h2>
-<h2 class="date">2020/07/01</h2>
+<h3 class="subtitle">Part 1: Swagger/OpenAPI</h3>
 </div>
+<h4 class="date">2020-07-01</h4>
+
+
 
 <main>
 <p>As software developers we need to perform several tasks <em>at the same time</em>, coding, writing documentation and writing tests. And for every feature our current project requires we&rsquo;ll perform, to a greater or lesser extent, all of these three things. So we can deduce that if we reduce the time spent in any of these activities we are then reducing the time that it takes our team to finish a feature.</p>
@@ -36,7 +44,8 @@
 <p>I&rsquo;ll be focusing on client-server/frontend-backend apps, more specifically the link between the parts and how we can make this interface as smooth as possible. The two tools described below were chosen by personal experience. <strong>Do your own research to find the best fit for you, as there are hundreds of options.</strong></p>
 <h2 id="swaggeropenapi">Swagger/OpenAPI</h2>
 <p>It&rsquo;s an open-source framework that helps us to design, build, document and consume HTTP APIs. It consists in a YAML document which holds all the definitions for our endpoints including their request and response objects.</p>
-<p>We can then use our yaml definition to create client and server libraries, static documentation, interfaces for easy manual testing (like <a href="https://editor.swagger.io">Swagger Editor</a>) and also tools for automated testing. But to be clear, you don&rsquo;t need to use all of the available tools to get benefit from this framework, you can adopt it gradually and start implementing more things as the team becomes more comfortable with it.</p>
+<p>We can then use our yaml definition to create client and server libraries, static documentation, interfaces for easy manual testing (like <a href="https://editor.swagger.io" target="_blank">Swagger Editor</a>
+) and also tools for automated testing. But to be clear, you don&rsquo;t need to use all of the available tools to get benefit from this framework, you can adopt it gradually and start implementing more things as the team becomes more comfortable with it.</p>
 <p>A good startpoint in my opinion is having a generated client library and a generated HTTP framework for the backend:</p>
 <ul>
 <li>Best ROI. The amount of effort for this setup is extremely low compared to the amount of time that it&rsquo;ll save the team, even in the short term.</li>
@@ -59,7 +68,13 @@
   
   
   <hr/>
-  © <a href="https://facundo.dev">Facundo Medica</a> 2019 &ndash; 2022 | <a href="https://github.com/facundomedica">Github</a> | <a href="https://twitter.com/facundomedica">Twitter</a>
+  <p><a href="https://github.com/facundomedica" target="_blank">Github</a>
+ | <a href="https://twitter.com/facundomedica" target="_blank">Twitter</a>
+ | <a href="https://www.linkedin.com/in/fmedica/" target="_blank">LinkedIn</a>
+ | <a href="https://facundo.dev/Facundo_Medica_CV_may2022.pdf" target="_blank">My resume</a>
+</p>
+<p>© Facundo Medica 2019 &ndash; 2022</p>
+
   
   </footer>
   </body>

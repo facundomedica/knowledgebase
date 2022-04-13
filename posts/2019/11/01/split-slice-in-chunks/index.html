@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Split slice in chunks | facundo.dev</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+    <link rel="stylesheet" href="../../../../../css/fonts.css" />
     
   </head>
 
@@ -13,19 +13,28 @@
     <nav>
     <ul class="menu">
       
+      <li><a href="../../../../../">home</a></li>
+      
+      <li><a href="../../../../../about/">about</a></li>
+      
+      <li><a href="../../../../../tags/">tags</a></li>
+      
     </ul>
     <hr/>
     </nav>
 
 <div class="article-meta">
 <h1><span class="title">Split slice in chunks</span></h1>
-<h2 class="author">Facundo Medica</h2>
-<h2 class="date">2019/11/01</h2>
+<h3 class="subtitle"></h3>
 </div>
+<h4 class="date">2019-11-01</h4>
+
+
 
 <main>
 <p>After benchmarking other solutions, this came out to be the most efficient.</p>
-<p><a href="https://play.golang.org/p/eNMOIlUFIRI">Go Playground</a></p>
+<p><a href="https://play.golang.org/p/eNMOIlUFIRI" target="_blank">Go Playground</a>
+</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">split</span><span class="p">(</span><span class="nx">buf</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">lim</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[][]</span><span class="kt">string</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">chunk</span> <span class="p">[]</span><span class="kt">string</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">chunks</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([][]</span><span class="kt">string</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span><span class="o">/</span><span class="nx">lim</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
@@ -45,7 +54,13 @@
   
   
   <hr/>
-  © <a href="https://facundo.dev">Facundo Medica</a> 2019 &ndash; 2022 | <a href="https://github.com/facundomedica">Github</a> | <a href="https://twitter.com/facundomedica">Twitter</a>
+  <p><a href="https://github.com/facundomedica" target="_blank">Github</a>
+ | <a href="https://twitter.com/facundomedica" target="_blank">Twitter</a>
+ | <a href="https://www.linkedin.com/in/fmedica/" target="_blank">LinkedIn</a>
+ | <a href="https://facundo.dev/Facundo_Medica_CV_may2022.pdf" target="_blank">My resume</a>
+</p>
+<p>© Facundo Medica 2019 &ndash; 2022</p>
+
   
   </footer>
   </body>
