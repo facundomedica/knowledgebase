@@ -9,18 +9,20 @@ pygmentsCodefencesGuessSyntax: true
 pygmentsUseClassic: true
 pygmentOptions: "linenos=inline"
 relativeUrls: true
-# canonifyURLs: true
 
 params:
   mainSections: ["post","posts"]
-  title: "A website built through Hugo and blogdown."
-  footer: "&copy; [Facundo Medica](https://facundo.dev) 2019 -- {Year} | [Github](https://github.com/facundomedica) | [Twitter](https://twitter.com/facundomedica)"
-#  useHLJS: true
+  title: "facundo.dev"
+  footer: >
+    [Github](https://github.com/facundomedica) | [Twitter](https://twitter.com/facundomedica) | [LinkedIn](https://www.linkedin.com/in/fmedica/) | [My resume](https://facundo.dev/Facundo_Medica_CV_may2022.pdf)
+    
+
+    &copy; Facundo Medica 2019 -- {Year}
 
 author:
   name: "Facundo Medica"
   website: "https://facundo.dev"
-  email: "facundo@protonmail.com"
+  email: "facundomedica@protonmail.com"
   github: "facundomedica"
   linkedin: "facundo-medica"
   stackoverflow: "users/5240559/facumedica"
