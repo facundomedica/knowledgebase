@@ -2,13 +2,29 @@ baseURL: "/"
 languageCode: "en"
 title: "facundo.dev"
 theme: "hugo-xmin"
-pygmentsStyle: "trac"
-pygmentsUseClasses: true
-pygmentsCodeFences: true
-pygmentsCodefencesGuessSyntax: true
-pygmentsUseClassic: true
-pygmentOptions: "linenos=inline"
+# pygmentsStyle: "trac"
+# pygmentsUseClasses: true
+# pygmentsCodeFences: true
+# pygmentsCodefencesGuessSyntax: true
+# pygmentsUseClassic: true
+# pygmentOptions: "linenos=inline"
 relativeUrls: true
+# useHLJS: true
+
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: false
+    noClasses: true
+    noHl: false
+    style: vs
+    tabWidth: 2
 
 params:
   mainSections: ["post","posts"]
