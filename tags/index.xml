@@ -8,7 +8,25 @@
     <language>en</language>
     <managingEditor>facundomedica@protonmail.com (Facundo Medica)</managingEditor>
     <webMaster>facundomedica@protonmail.com (Facundo Medica)</webMaster>
-    <lastBuildDate>Sun, 19 Sep 2021 22:23:02 -0300</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 10:10:02 -0300</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cosmos</title>
+      <link>/tags/cosmos/</link>
+      <pubDate>Sat, 23 Apr 2022 10:10:02 -0300</pubDate>
+      <author>facundomedica@protonmail.com (Facundo Medica)</author>
+      <guid>/tags/cosmos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>/tags/go/</link>
+      <pubDate>Sat, 23 Apr 2022 10:10:02 -0300</pubDate>
+      <author>facundomedica@protonmail.com (Facundo Medica)</author>
+      <guid>/tags/go/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>android</title>
       <link>/tags/android/</link>
@@ -51,15 +69,6 @@
       <pubDate>Wed, 27 Nov 2019 16:42:42 -0300</pubDate>
       <author>facundomedica@protonmail.com (Facundo Medica)</author>
       <guid>/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>/tags/go/</link>
-      <pubDate>Fri, 01 Nov 2019 19:55:15 -0300</pubDate>
-      <author>facundomedica@protonmail.com (Facundo Medica)</author>
-      <guid>/tags/go/</guid>
       <description></description>
     </item>
     

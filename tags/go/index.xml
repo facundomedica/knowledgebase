@@ -8,7 +8,27 @@
     <language>en</language>
     <managingEditor>facundomedica@protonmail.com (Facundo Medica)</managingEditor>
     <webMaster>facundomedica@protonmail.com (Facundo Medica)</webMaster>
-    <lastBuildDate>Fri, 01 Nov 2019 19:55:15 -0300</lastBuildDate><atom:link href="/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 10:10:02 -0300</lastBuildDate><atom:link href="/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debug stories 1: darwin-arm64 Cosmos SDK builds are not compatible with other archs</title>
+      <link>/posts/2022/04/23/debug-stories-1-darwin-arm64-cosmos-sdk-builds-are-not-compatible-with-other-archs/</link>
+      <pubDate>Sat, 23 Apr 2022 10:10:02 -0300</pubDate>
+      <author>facundomedica@protonmail.com (Facundo Medica)</author>
+      <guid>/posts/2022/04/23/debug-stories-1-darwin-arm64-cosmos-sdk-builds-are-not-compatible-with-other-archs/</guid>
+      <description>TL;DR Pointer addresses look different on different architechtures, so when converted to hex, they have different lengths. This difference in length causes a difference in gas usage, which is used to produce a hash.
+ At Umee we were experiencing a memory leak in our testnet validator nodes, so to me the best way forward was to run a node locally on my Macbook Pro M1, run pprof, add a bunch of log statements and go from there.</description>
+    </item>
+    
+    <item>
+      <title>My debug process</title>
+      <link>/posts/2022/04/23/my-debug-process/</link>
+      <pubDate>Sat, 23 Apr 2022 10:10:02 -0300</pubDate>
+      <author>facundomedica@protonmail.com (Facundo Medica)</author>
+      <guid>/posts/2022/04/23/my-debug-process/</guid>
+      <description>This is my process to figure out what&amp;rsquo;s wrong with pretty much anything (not that I can figure out everything, but it&amp;rsquo;s my go-to process to everything). It&amp;rsquo;s language agnostic and what I suppose you can call &amp;ldquo;fast paced&amp;rdquo;.
+I think it&amp;rsquo;s specially useful when debugging code bases I don&amp;rsquo;t know, given that I can&amp;rsquo;t assume anything, just follow the code and see where it leads me to. But as always, YMMV.</description>
+    </item>
+    
     <item>
       <title>Split slice in chunks</title>
       <link>/posts/2019/11/01/split-slice-in-chunks/</link>

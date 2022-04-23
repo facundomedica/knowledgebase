@@ -39,13 +39,13 @@
 <h2 id="presenting-the-plan-b-_scrape-the-entire-maven-directory-off-jcenter-for-this-dependency_">Presenting the plan B: <em>scrape the entire maven directory off JCenter for this dependency</em>.</h2>
 <h3 id="step-1">Step 1</h3>
 <h4 id="use-wget-to-download-everything-from-jcenter">Use wget to download everything from JCenter</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> mkdir localmaven <span class="o">&amp;&amp;</span> <span class="nb">cd</span> localmaven
-</span></span><span class="line"><span class="cl"> wget --recursive -np -nH -e <span class="nv">robots</span><span class="o">=</span>off -l5 http://jcenter.bintray.com/com/thevendorname/
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span> mkdir localmaven &amp;&amp; cd localmaven
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> wget --recursive -np -nH -e robots=off -l5 http://jcenter.bintray.com/com/thevendorname/
 </span></span></code></pre></div><h3 id="step-2">Step 2</h3>
 <h4 id="add-your-local-maven-repo-to-your-buildgradle">Add your local maven repo to your build.gradle</h4>
 <p>Under <code>allprojects</code> -&gt; <code>repositories</code> add the following (in the last position):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        maven { url rootProject.rootDir.getAbsolutePath() + &#34;/localmaven&#34; }
-</span></span></code></pre></div><h3 id="step-3">Step 3</h3>
+<pre tabindex="0"><code>        maven { url rootProject.rootDir.getAbsolutePath() + &#34;/localmaven&#34; }
+</code></pre><h3 id="step-3">Step 3</h3>
 <h4 id="remove-jcenter-optional">Remove jcenter (optional)</h4>
 <p>Given that the libraries on JCenter won&rsquo;t receive any more updates, you can safely remove it from your build.gradle once you&rsquo;ve made a copy of all the required dependencies.</p>
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cosmos on facundo.dev</title>
+    <link>/tags/cosmos/</link>
+    <description>Recent content in cosmos on facundo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>facundomedica@protonmail.com (Facundo Medica)</managingEditor>
+    <webMaster>facundomedica@protonmail.com (Facundo Medica)</webMaster>
+    <lastBuildDate>Sat, 23 Apr 2022 10:10:02 -0300</lastBuildDate><atom:link href="/tags/cosmos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debug stories 1: darwin-arm64 Cosmos SDK builds are not compatible with other archs</title>
+      <link>/posts/2022/04/23/debug-stories-1-darwin-arm64-cosmos-sdk-builds-are-not-compatible-with-other-archs/</link>
+      <pubDate>Sat, 23 Apr 2022 10:10:02 -0300</pubDate>
+      <author>facundomedica@protonmail.com (Facundo Medica)</author>
+      <guid>/posts/2022/04/23/debug-stories-1-darwin-arm64-cosmos-sdk-builds-are-not-compatible-with-other-archs/</guid>
+      <description>TL;DR Pointer addresses look different on different architechtures, so when converted to hex, they have different lengths. This difference in length causes a difference in gas usage, which is used to produce a hash.
+ At Umee we were experiencing a memory leak in our testnet validator nodes, so to me the best way forward was to run a node locally on my Macbook Pro M1, run pprof, add a bunch of log statements and go from there.</description>
+    </item>
+    
+  </channel>
+</rss>

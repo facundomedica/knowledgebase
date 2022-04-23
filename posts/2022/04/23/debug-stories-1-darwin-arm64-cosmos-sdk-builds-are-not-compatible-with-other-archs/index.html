@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Debug stories 1: darwin-arm64 Cosmos SDK builds are not compatible with other archs | facundo.dev</title>
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+    <link rel="stylesheet" href="../../../../../css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="../../../../../">home</a></li>
+      
+      <li><a href="../../../../../about/">about</a></li>
+      
+      <li><a href="../../../../../tags/">tags</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Debug stories 1: darwin-arm64 Cosmos SDK builds are not compatible with other archs</span></h1>
+<h3 class="subtitle">Mac M1 builds are 99.9% compatible; not enough for consensus lol</h3>
+</div>
+<h4 class="date">2022-04-23</h4>
+
+
+
+<main>
+<blockquote>
+<p><strong>TL;DR</strong> Pointer addresses look different on different architechtures, so when converted to hex, they have different
+lengths. This difference in length causes a difference in gas usage, which is used to produce a hash.</p>
+</blockquote>
+<p>At Umee we were experiencing a memory leak in our testnet validator nodes, so to me the best way forward was to run a node locally on my Macbook Pro M1, run pprof, add a bunch of log statements and go from there. <em>Easy right?</em></p>
+<p>So I did all the node sync dance: downloaded the latest binary, the genesis.json and got the node list for my persistent peers setting. Started the node with <code>umeed start</code> and off we go! But&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Failed to process committed block (1005:4FB45CC400ADE7B6F640EBE90C51C5EB58C0161D65C9F0B56771914C2F2E6A7D):
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>wrong Block.Header.LastResultsHash.  Expected 520376AE1EC01E88011892D398C88ADA48EB941F6DC975DCA45125C4398A8D44,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>got E30709AEEC492763438DA9DB0F64E9C69EFDAF237AE10778FFA4C03009347904
+</span></span></code></pre></div><p>Ok&hellip; so&hellip; my local node doesn&rsquo;t agree with the chain? Maybe it&rsquo;s just a momentary issue, you know, <em>&ldquo;turn it off and turn it on again&rdquo;</em>. I <code>unsafe-reset-all</code> and restart the binary; but again, the same issue arises. At this point I just went ahead to a Linux ARM server that I have running with pretty much the same tooling I use locally and do all the same steps once more. This time it works!</p>
+<p>But why would it work in a machine and not in another? The binary&rsquo;s source code was the same, the build process was the same, the only difference was the machine it was being run on. When a hash doesn&rsquo;t match you know for sure that there&rsquo;s some part of the data being hashed that doesn&rsquo;t match. This could meant that the entire data being hashed is different or that a single byte is different.</p>
+<p>So yeah, I &ldquo;<a href="https://xkcd.com/356/" target="_blank">nerd sniped</a>
+&rdquo; myself, left whatever I was doing and got to work on this. Finding indeterminism in a system that&rsquo;s meant to be <strong>absolutely deterministic</strong>? That sounds too much fun to ignore.</p>
+<h2 id="gathering-data">Gathering data</h2>
+<p>First step was identifying the block that this was happening at. Easy, just look at the error message: <code>Failed to process committed block (1005:4FB...</code>. So this happened while processing the 1005th block. I went to check the block contents using a known node RPC (<code>http://.../block?height=1005</code>) and it was clear that <code>Block.Header.LastResultsHash</code> was different (no news here, just what the error message said :P).</p>
+<p>But because the error is about <code>LastResultsHash</code> I figured that the actual error was happening a block before, so I ignored block 1005 and focused on <strong>block 1004</strong>. Ok, now we have to check the contents of block 1004, which contained 4 transactions:</p>
+<ul>
+<li>3 txs with a single <code>AggregateExchangeRatePrevote</code> message each from Umee&rsquo;s Price Feeders.</li>
+<li>1 tx with 2 messages: <code>ibc.core.client.v1.MsgUpdateClient</code> and <code>ibc.core.channel.v1.MsgChannelOpenTry</code> from an IBC relayer (Hermes in this case).</li>
+</ul>
+<p>Main suspect here would be the <code>AggregateExchangeRatePrevote</code> message, given that it&rsquo;s from a brand new module we are currently testing. No way that very well-known messages are causing the issue right? 👀</p>
+<h2 id="follow-the-links-and-log-absolutely-everything">Follow the links and log absolutely everything</h2>
+<p>Next step is to add log statements <strong>everywhere</strong>.</p>
+<blockquote>
+<p>Visibility and fast trials are key when you are debugging code bases you are not very familiar with.</p>
+</blockquote>
+<p>I have <a href="../../../../../posts/2022/04/23/my-debug-process/">my own process</a>
+ to do guerilla debugging, check it out, it might work for you too.</p>
+<p>In this case I was aiming to find where <code>LastResultsHash</code> was being set. After some Googleing I found that <code>LastResultsHash</code> was being set here by the <code>ABCIResponsesResultsHash</code> function:</p>
+<p><a href="https://github.com/tendermint/tendermint/blob/v0.34.16/state/execution.go#L450-L465" target="_blank">https://github.com/tendermint/tendermint/blob/v0.34.16/state/execution.go#L450-L465</a>
+</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>	<span style="color:#00f">return</span> State{
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>		Version:                      nextVersion,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>		ChainID:                      state.ChainID,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>		InitialHeight:                state.InitialHeight,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>		...
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>-&gt;  LastResultsHash:              ABCIResponsesResultsHash(abciResponses), &lt;-
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>		AppHash:                      <span style="color:#00f">nil</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>	}, <span style="color:#00f">nil</span>
+</span></span></code></pre></div><p>Following that function we see it&rsquo;s pretty simple:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#00f">func</span> ABCIResponsesResultsHash(ar *tmstate.ABCIResponses) []<span style="color:#2b91af">byte</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#00f">return</span> types.NewResults(ar.DeliverTxs).Hash()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>}
+</span></span></code></pre></div><p>So I naturally did something like:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#00f">func</span> ABCIResponsesResultsHash(ar *tmstate.ABCIResponses) []<span style="color:#2b91af">byte</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>        <span style="color:#00f">for</span> _, v := <span style="color:#00f">range</span> ar.DeliverTxs {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>                log.Println(v.String())
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>	<span style="color:#00f">return</span> types.NewResults(ar.DeliverTxs).Hash()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>}
+</span></span></code></pre></div><p>I then repeated this in the Linux server and compared the outpus around the time I think it was failing with a tool like <a href="https://text-compare.com/" target="_blank">this one</a>
+. And after some time looking at it I found a difference!</p>
+<pre tabindex="0"><code>My macbook: gas_used:177437
+Server: gas_used:177371
+Diff: 66
+</code></pre><p>It was clear that there was a difference in gas used by one of the messages in that block, by looking at the transactions around there, I knew that it was caused by either <code>ibc.core.client.v1.MsgUpdateClient</code> or <code>ibc.core.channel.v1.MsgChannelOpenTry</code>. So I was like &ldquo;ok, then I&rsquo;ll just check their types and find something evident like a an <code>int</code> instead of <code>int64</code>&rdquo; (which is one of the main examples in which a different architecture can cause indeterminism).</p>
+<p>But after a while of looking at the code I couldn&rsquo;t figure it out&hellip; At this point I was a bit stuck, so I decided to forget about the specific messages and dig deeper into how the gas is counted.</p>
+<h2 id="digging-deeper">Digging deeper</h2>
+<p>Next step was to check where the gas is being counted. I thought that if I could break down gas usage into each separate operation then I would be able to see differences. Never really went this far under Cosmos&rsquo; hood, but I found after a while this file: <a href="https://github.com/cosmos/cosmos-sdk/blob/v0.45.2/store/gaskv/store.go" target="_blank">cosmos-sdk/store/gaskv/store.go</a>
+. Bingo! So in this file you can see a bunch of lines like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>gs.gasMeter.ConsumeGas(gs.gasConfig.ReadCostPerByte*types.Gas(len(key)), types.GasReadPerByteDesc)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>gs.gasMeter.ConsumeGas(gs.gasConfig.ReadCostPerByte*types.Gas(len(value)), types.GasReadPerByteDesc)
+</span></span></code></pre></div><p>What I did next is to add matching log statements to each of these calls (I actually first only printed the gas used and then added the key and value, but let&rsquo;s keep this post short lol):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>log.Println(gs.gasConfig.ReadCostPerByte*types.Gas(len(key)), types.GasReadPerByteDesc, string(key))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>log.Println(gs.gasConfig.ReadCostPerByte*types.Gas(len(value)), types.GasReadPerByteDesc, string(value))
+</span></span></code></pre></div><p>Then I ran the same code on the server and compared the outputs.</p>
+<pre tabindex="0"><code>Mac
+gas consumed, operation, key/value
+1000 ReadFlat ibc/fwd/0x14000ffda48
+63 ReadPerByte ibc/fwd/0x14000ffda48 &lt;- +3
+42 ReadPerByte ports/transfer
+...
+2000 WriteFlat ibc/fwd/0x140084adec8
+630 WritePerByte ibc/fwd/0x140084adec8 &lt;- +30
+1380 WritePerByte capabilities/ports/transfer/channels/channel-0
+...
+1000 ReadFlat transfer/fwd/0x140084adec8
+78 ReadPerByte transfer/fwd/0x140084adec8 &lt;- +3
+0 ReadPerByte 
+...
+2000 WriteFlat transfer/fwd/0x140084adec8
+780 WritePerByte transfer/fwd/0x140084adec8 &lt;- +30
+1380 WritePerByte capabilities/ports/transfer/channels/channel-0
+</code></pre><pre tabindex="0"><code>Linux server
+1000 ReadFlat ibc/fwd/0x40010081a8
+60 ReadPerByte ibc/fwd/0x40010081a8
+42 ReadPerByte ports/transfer
+...
+2000 WriteFlat ibc/fwd/0x4005b534a8
+600 WritePerByte ibc/fwd/0x4005b534a8
+1380 WritePerByte capabilities/ports/transfer/channels/channel-0
+...
+1000 ReadFlat transfer/fwd/0x4005b534a8
+75 ReadPerByte transfer/fwd/0x4005b534a8
+0 ReadPerByte 
+...
+2000 WriteFlat transfer/fwd/0x4005b534a8
+750 WritePerByte transfer/fwd/0x4005b534a8
+1380 WritePerByte capabilities/ports/transfer/channels/channel-0
+</code></pre><p>And here we see that there&rsquo;s an extra character on the software running on my Mac! And it matches the difference <code>gs.gasConfig.ReadCostPerByte = 3</code> and <code>gs.gasConfig.WriteCostPerByte = 30</code>, so 2 reads and 2 writes with an extra byte each sums up to 66 gas points.</p>
+<h2 id="the-root-cause">The root cause</h2>
+<p>After reading the logs above it was trivial to find the root of the whole issue, a quick search for /fwd/ got me to <a href="https://github.com/cosmos/cosmos-sdk/blob/v0.45.2/x/capability/types/keys.go#L39-L43" target="_blank">this function</a>
+ in the <code>x/capability</code> module:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000">// FwdCapabilityKey returns a forward lookup key for a given module and capability
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#008000">// reference.
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#008000"></span><span style="color:#00f">func</span> FwdCapabilityKey(module <span style="color:#2b91af">string</span>, cap *Capability) []<span style="color:#2b91af">byte</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	<span style="color:#00f">return</span> []byte(fmt.Sprintf(<span style="color:#a31515">&#34;%s/fwd/%p&#34;</span>, module, cap))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>}
+</span></span></code></pre></div><p>Here we can see that it converts the pointer to a string by using %p which is the <code>address of 0th element in base 16 notation, with leading 0x</code>. Which depending on the architecture seems to be longer or shorter given that some memory spaces might start at a different address (and I assume even in the same architecture depending on the amount of memory available, but I&rsquo;m no expert so I might be extremely wrong).</p>
+<p>So the issue was that it was assumed that the address&rsquo; hex representation length was going to be exactly the same on all machines, but there&rsquo;s no way to guarantee this.</p>
+<p><strong>Why no one found this before?</strong> Simply because most of nodes are running Linux on an amd64 processor and people running nodes on Macbooks are the exception, probably just devs. And because when you are developing you are probably running all your nodes locally, there&rsquo;s no difference among them, so they all agree on the same address length.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This was my first attempt at writing down my thought process while debugging stuff, and btw I&rsquo;ve ommited many details and trials, I wished it was this straightforward 😆. I don&rsquo;t know the details to many things what I just commented, so yeah, making a lot of assumptions here :)</p>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  <p><a href="https://github.com/facundomedica" target="_blank">Github</a>
+ | <a href="https://twitter.com/facundomedica" target="_blank">Twitter</a>
+ | <a href="https://www.linkedin.com/in/fmedica/" target="_blank">LinkedIn</a>
+ | <a href="https://facundo.dev/Facundo_Medica_CV_may2022.pdf" target="_blank">My resume</a>
+</p>
+<p>© Facundo Medica 2019 &ndash; 2022</p>
+
+  
+  </footer>
+  </body>
+</html>
+

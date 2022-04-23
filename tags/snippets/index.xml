@@ -15,7 +15,7 @@
       <pubDate>Fri, 13 Dec 2019 11:05:15 -0300</pubDate>
       <author>facundomedica@protonmail.com (Facundo Medica)</author>
       <guid>/posts/2019/12/13/print-the-contents-of-an-object-in-python/</guid>
-      <description>from pprint import pprint pprint(vars(response)) </description>
+      <description>1from pprint import pprint 2 3pprint(vars(response)) </description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@
       <author>facundomedica@protonmail.com (Facundo Medica)</author>
       <guid>/posts/2019/10/27/simple-http-server/</guid>
       <description>Serve an entire directory easily with Python.
-python -m SimpleHTTPServer python3 -m http.server </description>
+1python -m SimpleHTTPServer 1python3 -m http.server </description>
     </item>
     
   </channel>

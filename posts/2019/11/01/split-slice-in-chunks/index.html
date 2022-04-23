@@ -35,18 +35,18 @@
 <p>After benchmarking other solutions, this came out to be the most efficient.</p>
 <p><a href="https://play.golang.org/p/eNMOIlUFIRI" target="_blank">Go Playground</a>
 </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">split</span><span class="p">(</span><span class="nx">buf</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">lim</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[][]</span><span class="kt">string</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">chunk</span> <span class="p">[]</span><span class="kt">string</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">chunks</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([][]</span><span class="kt">string</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span><span class="o">/</span><span class="nx">lim</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nb">len</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="nx">lim</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">chunk</span><span class="p">,</span> <span class="nx">buf</span> <span class="p">=</span> <span class="nx">buf</span><span class="p">[:</span><span class="nx">lim</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="nx">lim</span><span class="p">:]</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">chunks</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">chunks</span><span class="p">,</span> <span class="nx">chunk</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">chunks</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">chunks</span><span class="p">,</span> <span class="nx">buf</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">buf</span><span class="p">)])</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">chunks</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#00f">func</span> split(buf []<span style="color:#2b91af">string</span>, lim <span style="color:#2b91af">int</span>) [][]<span style="color:#2b91af">string</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#00f">var</span> chunk []<span style="color:#2b91af">string</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	chunks := make([][]<span style="color:#2b91af">string</span>, 0, len(buf)/lim+1)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	<span style="color:#00f">for</span> len(buf) &gt;= lim {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>		chunk, buf = buf[:lim], buf[lim:]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>		chunks = append(chunks, chunk)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>	}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>	<span style="color:#00f">if</span> len(buf) &gt; 0 {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>		chunks = append(chunks, buf[:len(buf)])
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	<span style="color:#00f">return</span> chunks
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>}
 </span></span></code></pre></div>
 </main>
 
